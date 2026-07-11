@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>S.M.A | Cursos</title>
+
+    <link rel="shortcut icon" href="Logo da sma Soluções.png">
+
+    <link rel="stylesheet" href="style.css">
+   <style>
+    /* ===================================
+   RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f8fafc;
+
+    color:#0f172a;
+
+}
+
+
+
+/* ===================================
+   HEADER
+=================================== */
+
+
+header{
+
+    width:100%;
+
+    height:90px;
+
+    background:transparent;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 7%;
+
+
+    box-shadow:
+    0 5px 25px rgba(0,0,0,.08);
+
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+
+}
+
+
+
+.logo img{
+
+    width:160px;
+
+}
+
+
+
+
+nav ul{
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+
+}
+
+
+
+nav a{
+
+    text-decoration:none;
+
+    color:#0f172a;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+nav a:hover,
+nav .active{
+
+    color:#2563eb;
+
+}
+
+
+
+
+.btn{
+
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white;
+
+
+    padding:13px 30px;
+
+
+    border-radius:50px;
+
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(37,99,235,.35);
+
+}
+
+
+
+
+
+/* ===================================
+   HERO
+=================================== */
+
+
+.hero{
+
+
+    padding:80px 20px;
+
+
+    text-align:center;
+
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #60a5fa
+    );
+
+
+    color:white;
+
+
+}
+
+
+
+.hero h1{
+
+
+    font-size:55px;
+
+
+    font-weight:800;
+
+
+    animation:aparecer 1s ease;
+
+
+}
+
+
+
+.hero p{
+
+
+    margin-top:15px;
+
+
+    font-size:20px;
+
+
+    opacity:.9;
+
+
+}
+
+
+
+
+
+/* ===================================
+   GRID DE CURSOS
+=================================== */
+
+
+.cursos{
+
+
+    width:90%;
+
+
+    max-width:1300px;
+
+
+    margin:70px auto;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+/* ===================================
+   CARD PREMIUM
+=================================== */
+
+
+.curso-card{
+
+
+    background:white;
+
+
+    border-radius:25px;
+
+
+    overflow:hidden;
+
+
+    box-shadow:
+
+    0 10px 30px rgba(15,23,42,.08);
+
+
+    transition:.45s;
+
+
+    border:1px solid #e5e7eb;
+
+
+    animation:subir .8s ease;
+
+
+}
+
+
+
+
+.curso-card:hover{
+
+
+    transform:
+
+    translateY(-12px)
+    scale(1.02);
+
+
+    box-shadow:
+
+    0 25px 50px rgba(37,99,235,.25);
+
+
+}
+
+
+
+
+
+.curso-card img{
+
+
+    width:100%;
+
+
+    height:220px;
+
+
+    object-fit:cover;
+
+
+    transition:.5s;
+
+
+}
+
+
+
+.curso-card:hover img{
+
+
+    transform:scale(1.08);
+
+
+}
+
+
+
+
+
+.conteudo{
+
+
+    padding:30px;
+
+
+}
+
+
+
+
+.conteudo h2{
+
+
+    color:#2563eb;
+
+
+    font-size:26px;
+
+
+    margin-bottom:12px;
+
+
+}
+
+
+
+
+.conteudo p{
+
+
+    color:#64748b;
+
+
+    line-height:1.6;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.conteudo a{
+
+
+    display:inline-block;
+
+
+    text-decoration:none;
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+    padding:12px 28px;
+
+
+    border-radius:30px;
+
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.conteudo a:hover{
+
+
+    background:#1d4ed8;
+
+
+    box-shadow:
+
+    0 10px 25px rgba(37,99,235,.4);
+
+
+}
+
+
+
+
+
+/* ===================================
+   FOOTER
+=================================== */
+
+
+footer{
+
+
+    background:#0f172a;
+
+
+    color:white;
+
+
+    padding:30px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+/* ===================================
+   ANIMAÇÕES
+=================================== */
+
+
+@keyframes aparecer{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+@keyframes subir{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+/* ===================================
+   RESPONSIVO
+=================================== */
+
+
+@media(max-width:1000px){
+
+
+    header{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:20px;
+
+        gap:20px;
+
+    }
+
+
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+
+
+    .cursos{
+
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+
+    }
+
+
+
+}
+
+
+
+
+@media(max-width:650px){
+
+
+    .hero h1{
+
+        font-size:35px;
+
+    }
+
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+
+
+    .cursos{
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+
+    nav ul{
+
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+
+}
+   </style>
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+
+<!-- =====================
+        HEADER
+====================== -->
+
+
+<header>
+
+
+    <div class="logo">
+
+        <img src="Logo da sma Soluções.png" alt="S.M.A">
+
+    </div>
+
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Início
+                </a>
+            </li>
+
+
+            <li>
+                <a href="Cursos.html" class="active">
+                    Cursos
+                </a>
+            </li>
+
+
+            <li>
+                <a href="vendas.html">
+                    Vendas
+                </a>
+            </li>
+
+
+            <li>
+                <a href="oque.html">
+                    O que fazemos
+                </a>
+            </li>
+
+
+            <li>
+                <a href="contactos.html">
+                    Contactos
+                </a>
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+
+    <a href="Cursos.html" class="btn">
+
+        Inscrição
+
+    </a>
+
+
+
+</header>
+
+
+
+
+
+<!-- =====================
+        HERO
+====================== -->
+
+
+<section class="hero">
+
+
+    <h1>
+        Explore os nossos cursos
+    </h1>
+
+
+    <p>
+        Desenvolva novas habilidades e prepare-se
+        para as oportunidades do futuro.
+    </p>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =====================
+        CURSOS
+====================== -->
+
+
+<section class="cursos">
+
+
+
+<div class="curso-card">
+
+
+<img src="imagem/programação.jpeg" alt="Programação">
+
+
+<div class="conteudo">
+
+
+<h2>
+Programação
+</h2>
+
+
+<p>
+Aprenda desenvolvimento de software,
+criação de sistemas e tecnologia.
+</p>
+
+
+<a href="PROGRMAÇÃO.html">
+Ver curso
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="curso-card">
+
+
+<img src="flyer-sma_solu-tecnologica (2).png" alt="Inglês">
+
+
+<div class="conteudo">
+
+
+<h2>
+Inglês
+</h2>
+
+
+<p>
+Aprenda inglês para comunicação,
+trabalho e tecnologia.
+</p>
+
+
+<a href="ingles.html">
+Ver curso
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="curso-card">
+
+
+<img src="imagem/marketing.jpeg" alt="Marketing">
+
+
+<div class="conteudo">
+
+
+<h2>
+Marketing Digital
+</h2>
+
+
+<p>
+Aprenda estratégias digitais
+para negócios modernos.
+</p>
+
+
+<a href="Cursos.html">
+Ver curso
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="curso-card">
+
+
+<img src="imagem/inf.optica de utilizadores.jpeg" alt="Informática">
+
+
+<div class="conteudo">
+
+
+<h2>
+Informática
+</h2>
+
+
+<p>
+Domine ferramentas essenciais
+de computador.
+</p>
+
+
+<a href="Cursos.html">
+Ver curso
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="curso-card">
+
+
+<img src="imagem/redes (1).jpeg" alt="Redes">
+
+
+<div class="conteudo">
+
+
+<h2>
+Redes
+</h2>
+
+
+<p>
+Aprenda instalação e configuração
+de redes.
+</p>
+
+
+<a href="Cursos.html">
+Ver curso
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="curso-card">
+
+
+<img src="imagem/hardwere.jpeg" alt="Hardware">
+
+
+<div class="conteudo">
+
+
+<h2>
+Hardware
+</h2>
+
+
+<p>
+Conheça manutenção e montagem
+de computadores.
+</p>
+
+
+<a href="Cursos.html">
+Ver curso
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="curso-card">
+
+
+<img src="harduino.jpg" alt="Arduino">
+
+
+<div class="conteudo">
+
+
+<h2>
+Arduino
+</h2>
+
+
+<p>
+Aprenda eletrónica e criação
+de projetos inteligentes.
+</p>
+
+
+<a href="Cursos.html">
+Ver curso
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =====================
+        FOOTER
+====================== -->
+
+
+<footer>
+
+<p>
+© 2026 S.M.A Soluções | Todos os direitos reservados
+</p>
+
+
+</footer>
+
+
+
+
+</body>
+<script>
+
+let lastScroll = 0;
+const header = document.querySelector("header");
+
+
+window.addEventListener("scroll",()=>{
+
+    let currentScroll = window.pageYOffset;
+
+
+    if(currentScroll > lastScroll && currentScroll > 100){
+
+        // rolando para baixo
+        header.classList.add("hide");
+
+    }else{
+
+        // rolando para cima
+        header.classList.remove("hide");
+
+    }
+
+
+    lastScroll = currentScroll;
+
+});
+
+
+</script>
+</html>

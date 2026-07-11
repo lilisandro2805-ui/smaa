@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>S.M.A | Inscrição</title>
+
+<link rel="shortcut icon" href="Logo da sma Soluções.png">
+
+<link rel="stylesheet" href="inscricao.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+   <style>
+      /* =====================================
+        RESET
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    background:
+
+    radial-gradient(
+        circle at top,
+        #2563eb,
+        #050816 70%
+    );
+
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+
+
+
+
+/* =====================================
+        HEADER
+===================================== */
+
+
+header{
+
+
+    width:100%;
+
+
+    padding:25px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    background:rgba(0,0,0,.3);
+
+
+    backdrop-filter:blur(10px);
+
+
+}
+
+
+
+header img{
+
+
+    width:200px;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+        FORMULÁRIO
+===================================== */
+
+
+.formulario{
+
+
+    width:90%;
+
+
+    max-width:600px;
+
+
+    margin:50px auto;
+
+
+    background:white;
+
+
+    color:#0f172a;
+
+
+    padding:45px;
+
+
+    border-radius:30px;
+
+
+    box-shadow:
+
+
+    0 25px 60px rgba(0,0,0,.4);
+
+
+    animation:
+
+    aparecer .8s ease;
+
+
+}
+
+
+
+
+.formulario h1{
+
+
+    text-align:center;
+
+
+    color:#2563eb;
+
+
+    font-size:35px;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+.formulario p{
+
+
+    text-align:center;
+
+
+    color:#64748b;
+
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+        CAMPOS
+===================================== */
+
+
+form{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:12px;
+
+
+}
+
+
+
+label{
+
+
+    font-weight:600;
+
+
+    margin-top:10px;
+
+
+}
+
+
+
+
+
+input{
+
+
+    width:100%;
+
+
+    padding:15px;
+
+
+    border-radius:12px;
+
+
+    border:1px solid #cbd5e1;
+
+
+    outline:none;
+
+
+    font-size:16px;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+input:focus{
+
+
+    border-color:#2563eb;
+
+
+    box-shadow:
+
+
+    0 0 10px rgba(37,99,235,.3);
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+        TURNO
+===================================== */
+
+
+.turno{
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:40px;
+
+
+    margin:25px 0;
+
+
+}
+
+
+
+.turno label{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:8px;
+
+
+}
+
+
+
+.turno input{
+
+
+    width:auto;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+        BOTÃO
+===================================== */
+
+
+button{
+
+
+    margin-top:20px;
+
+
+    padding:16px;
+
+
+    border:none;
+
+
+    border-radius:40px;
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+    font-size:18px;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+button:hover{
+
+
+    background:#1d4ed8;
+
+
+    transform:translateY(-5px);
+
+
+    box-shadow:
+
+
+    0 15px 30px rgba(37,99,235,.4);
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+        ANIMAÇÃO
+===================================== */
+
+
+@keyframes aparecer{
+
+
+from{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+        RESPONSIVO
+===================================== */
+
+
+@media(max-width:600px){
+
+
+.formulario{
+
+
+    padding:25px;
+
+
+}
+
+
+
+.formulario h1{
+
+
+    font-size:28px;
+
+
+}
+
+
+
+.turno{
+
+
+    flex-direction:column;
+
+
+    gap:15px;
+
+
+    align-items:center;
+
+
+}
+
+
+header img{
+
+
+    width:150px;
+
+
+}
+
+
+
+}
+   </style>
+
+<header>
+
+<img src="Logo da sma Soluções.png" alt="S.M.A">
+
+</header>
+
+
+
+
+
+<main class="formulario">
+
+
+<h1>
+Inscrição no Curso
+</h1>
+
+
+<p>
+Preencha os seus dados corretamente.
+</p>
+
+
+
+
+<form>
+
+
+<label>
+Curso
+</label>
+
+<input type="text" placeholder="Nome do curso">
+
+
+
+
+
+<label>
+Nome completo
+</label>
+
+<input type="text" placeholder="Digite o seu nome">
+
+
+
+
+
+<label>
+Número de telefone
+</label>
+
+<input type="text" placeholder="Ex: 9xx xxx xxx">
+
+
+
+
+
+<label>
+Número do BI
+</label>
+
+<input type="text" placeholder="Número do BI">
+
+
+
+
+
+<label>
+Data de nascimento
+</label>
+
+<input type="date">
+
+
+
+
+
+<label>
+Morada
+</label>
+
+<input type="text" placeholder="Sua morada">
+
+
+
+
+
+
+<div class="turno">
+
+
+<label>
+
+<input type="checkbox">
+
+Manhã
+
+</label>
+
+
+
+<label>
+
+<input type="checkbox">
+
+Tarde
+
+</label>
+
+
+
+</div>
+
+
+
+
+
+
+<button type="button" onclick="pdf()">
+
+Terminar inscrição
+
+</button>
+
+
+
+
+</form>
+
+
+</main>
+
+
+
+
+
+
+<script>
+
+function pdf(){
+
+alert(
+"Será aberta uma janela para imprimir os seus dados em PDF. Aceite para continuar."
+);
+
+window.print();
+
+}
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
