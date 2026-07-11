@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>S.M.A Soluções</title>
+
+    <link rel="shortcut icon" href="Logo da sma Soluções.png">
+
+    <!-- CSS exclusivo da página inicial -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     VIDEO DE FUNDO
+========================== -->
+
+<video autoplay muted loop playsinline class="background-video">
+
+    <source src="vi.mp4" type="video/mp4">
+
+</video>
+
+
+
+<!-- Camada para melhorar leitura -->
+
+<div class="overlay"></div>
+
+
+
+<!-- =========================
+        HEADER
+========================== -->
+
+<header>
+
+    <div class="logo">
+
+        <img src="Logo da sma Soluções.png" alt="S.M.A">
+
+    </div>
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Início</a>
+            </li>
+
+
+            <li>
+                <a href="curso.html">Cursos</a>
+            </li>
+
+
+            <li>
+                <a href="vendas.html">Vendas</a>
+            </li>
+
+
+            <li>
+                <a href="oque.html">O que fazemos</a>
+            </li>
+
+
+            <li>
+                <a href="diversão.html">Diversão</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <a href="Cursos.html" class="btn-inscricao">
+        Inscrição
+    </a>
+
+
+</header>
+
+
+
+
+
+<!-- =========================
+        HERO
+========================== -->
+
+
+<main>
+
+
+<section class="hero">
+
+
+    <h1>
+        O FUTURO DA TECNOLOGIA
+        <br>
+        COMEÇA AQUI
+    </h1>
+
+
+    <p>
+
+        A S.M.A transforma conhecimento em oportunidades.
+        Cursos, soluções digitais e inovação para preparar
+        pessoas para o futuro.
+
+    </p>
+
+
+
+    <div class="buttons">
+
+
+        <a href="curso.html" class="primary-btn">
+
+            Explorar Cursos
+
+        </a>
+
+
+
+        <a href="oque.html" class="secondary-btn">
+
+            Saber Mais
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!-- =========================
+        SERVIÇOS
+========================== -->
+
+
+<section class="services">
+
+
+    <h2>
+        Nossas Soluções
+    </h2>
+
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+
+            <h3>
+                Cursos
+            </h3>
+
+
+            <p>
+                Formação profissional para desenvolver novas habilidades.
+            </p>
+
+
+        </div>
+
+
+
+
+        <div class="card">
+
+
+            <h3>
+                Tecnologia
+            </h3>
+
+
+            <p>
+                Soluções digitais modernas para empresas e pessoas.
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <div class="card">
+
+
+            <h3>
+                Inovação
+            </h3>
+
+
+            <p>
+                Criamos ideias e projetos preparados para o futuro.
+            </p>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+
+</main>
+
+
+
+
+
+
+<!-- =========================
+        FOOTER
+========================== -->
+
+
+<footer>
+
+
+    <p>
+        © 2026 S.M.A Soluções. Todos os direitos reservados.
+    </p>
+
+
+</footer>
+
+<script>
+
+let lastScroll = 0;
+const header = document.querySelector("header");
+
+
+window.addEventListener("scroll",()=>{
+
+    let currentScroll = window.pageYOffset;
+
+
+    if(currentScroll > lastScroll && currentScroll > 100){
+
+        // rolando para baixo
+        header.classList.add("hide");
+
+    }else{
+
+        // rolando para cima
+        header.classList.remove("hide");
+
+    }
+
+
+    lastScroll = currentScroll;
+
+});
+
+
+</script>
+
+</body>
+
+</html>

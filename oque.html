@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>S.M.A | O que fazemos</title>
+
+<link rel="shortcut icon" href="Logo da sma Soluções.png">
+
+<link rel="stylesheet" href="style.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* =====================================
+   RESET
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+
+
+
+/* =====================================
+        HEADER
+===================================== */
+
+/* Header escondido ao rolar */
+
+header{
+    transition: transform .4s ease;
+}
+
+header.hide{
+    transform: translateY(-100%);
+}
+header{
+
+    width:100%;
+
+    height:90px;
+
+    padding:0 7%;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+
+    background:#ffffff;
+
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.3);
+
+}
+
+
+
+.logo img{
+
+    width:160px;
+
+}
+
+
+
+
+nav ul{
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+
+}
+
+
+
+nav a{
+
+    text-decoration:none;
+
+    color:#0f172a;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+nav a:hover,
+nav .active{
+
+    color:#2563eb;
+
+}
+
+
+
+
+
+.btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+
+    padding:13px 30px;
+
+
+    border-radius:40px;
+
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-4px);
+
+
+    box-shadow:
+
+    0 10px 30px rgba(37,99,235,.5);
+
+}
+
+
+
+
+
+/* =====================================
+        HERO
+===================================== */
+
+
+.hero{
+
+
+    min-height:420px;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    text-align:center;
+
+
+    padding:40px 20px;
+
+
+    background:
+
+
+    radial-gradient(
+        circle at top,
+        #2563eb,
+        #050816 70%
+    );
+
+
+}
+
+
+
+
+.hero h1{
+
+
+    font-size:60px;
+
+
+    font-weight:800;
+
+
+    animation:entrada 1s ease;
+
+
+}
+
+
+
+
+.hero p{
+
+
+    margin-top:20px;
+
+
+    max-width:700px;
+
+
+    color:#cbd5e1;
+
+
+    font-size:20px;
+
+
+}
+
+
+
+
+
+/* =====================================
+        CATEGORIAS
+===================================== */
+
+
+.categoria{
+
+
+    width:90%;
+
+
+    max-width:1300px;
+
+
+    margin:80px auto;
+
+
+}
+
+
+
+
+
+.categoria h2{
+
+
+    color:#60a5fa;
+
+
+    font-size:35px;
+
+
+    margin-bottom:35px;
+
+
+    position:relative;
+
+
+}
+
+
+
+.categoria h2::after{
+
+
+    content:"";
+
+
+    display:block;
+
+
+    width:80px;
+
+
+    height:4px;
+
+
+    margin-top:10px;
+
+
+    background:#2563eb;
+
+
+    border-radius:10px;
+
+
+}
+
+
+
+
+
+/* =====================================
+        GALERIA DE VIDEOS
+===================================== */
+
+
+.videos{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+.videos video{
+
+
+    width:100%;
+
+
+    height:360px;
+
+
+    object-fit:cover;
+
+
+    border-radius:25px;
+
+
+    background:#000;
+
+
+    padding:8px;
+
+
+    border:
+
+    1px solid rgba(96,165,250,.25);
+
+
+    box-shadow:
+
+
+    0 15px 40px rgba(0,0,0,.6);
+
+
+    transition:.45s;
+
+
+}
+
+
+
+
+
+.videos video:hover{
+
+
+    transform:
+
+
+    translateY(-12px)
+    scale(1.04);
+
+
+    border-color:#2563eb;
+
+
+    box-shadow:
+
+
+    0 25px 60px rgba(37,99,235,.45);
+
+
+}
+
+
+
+
+
+/* =====================================
+        FOOTER
+===================================== */
+
+
+footer{
+
+
+    background:#020617;
+
+
+    padding:35px;
+
+
+    text-align:center;
+
+
+    color:#94a3b8;
+
+
+    margin-top:80px;
+
+
+}
+
+
+
+
+
+/* =====================================
+        ANIMAÇÕES
+===================================== */
+
+
+@keyframes entrada{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+.categoria{
+
+
+    animation:
+
+    aparecer .8s ease;
+
+
+}
+
+
+
+@keyframes aparecer{
+
+
+    from{
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+        RESPONSIVO
+===================================== */
+
+
+@media(max-width:1000px){
+
+
+header{
+
+
+    height:auto;
+
+
+    padding:20px;
+
+
+    flex-direction:column;
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+nav ul{
+
+
+    flex-wrap:wrap;
+
+
+    justify-content:center;
+
+
+}
+
+
+
+
+.videos{
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+.hero h1{
+
+
+    font-size:45px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+@media(max-width:650px){
+
+
+
+nav ul{
+
+
+    flex-direction:column;
+
+
+    text-align:center;
+
+
+}
+
+
+
+.hero{
+
+
+    min-height:350px;
+
+
+}
+
+
+
+.hero h1{
+
+
+    font-size:32px;
+
+
+}
+
+
+
+.hero p{
+
+
+    font-size:16px;
+
+
+}
+
+
+
+.videos{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+
+.videos video{
+
+
+    height:300px;
+
+
+}
+
+
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+
+<img src="Logo da sma Soluções.png">
+
+</div>
+
+
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Início</a></li>
+
+<li><a href="Cursos.html">Cursos</a></li>
+
+<li><a href="vendas.html">Vendas</a></li>
+
+<li><a href="oque.html" class="active">O que fazemos</a></li>
+
+<li><a href="contactos.html">Contactos</a></li>
+
+
+</ul>
+
+</nav>
+
+
+
+<a href="Cursos.html" class="btn">
+Inscrição
+</a>
+
+
+</header>
+
+
+
+
+
+<section class="hero">
+
+<h1>
+Conheça os nossos trabalhos
+</h1>
+
+<p>
+Soluções tecnológicas, manutenção,
+programação e formação profissional.
+</p>
+
+</section>
+
+
+
+
+
+<section class="categoria">
+
+
+<h2>
+🔧 Manutenção
+</h2>
+
+
+<div class="videos">
+
+
+<video controls src="videos/manutençao/WhatsApp Video 2025-02-26 at 05.11.25.mp4"></video>
+
+<video controls src="videos/manutençao/WhatsApp Video 2025-05-16 at 09.22.46.mp4"></video>
+
+<video controls src="videos/manutençao/WhatsApp Video 2025-05-16 at 09.22.47 (1).mp4"></video>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="categoria">
+
+
+<h2>
+💻 Programação
+</h2>
+
+
+<div class="videos">
+
+
+<video controls src="videos/programaçao/WhatsApp Video 2025-05-16 at 09.20.26.mp4"></video>
+
+<video controls src="videos/programaçao/WhatsApp Video 2025-05-16 at 09.22.49.mp4"></video>
+
+<video controls src="videos/programaçao/WhatsApp Video 2025-05-16 at 09.22.50.mp4"></video>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="categoria">
+
+
+<h2>
+🌎 Inglês
+</h2>
+
+
+<div class="videos">
+
+
+<video controls src="videos/ingles/w.mp4"></video>
+
+<video controls src="videos/ingles/2.mp4"></video>
+
+<video controls src="videos/ingles/1.mp4"></video>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="categoria">
+
+
+<h2>
+⚙️ Sistema de Gestão
+</h2>
+
+
+<div class="videos">
+
+
+<video controls src="videos/sistema de gestao/n.mp4"></video>
+
+<video controls src="videos/sistema de gestao/WhatsApp Video 2025-03-13 at 19.40.00.mp4"></video>
+
+<video controls src="videos/sistema de gestao/WhatsApp Video 2025-05-16 at 09.08.48.mp4"></video>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="categoria">
+
+
+<h2>
+⭐ Testemunhos
+</h2>
+
+
+<div class="videos">
+
+
+<video controls src="videos/testemunho/WhatsApp Video 2025-05-16 at 09.22.42 (1).mp4"></video>
+
+<video controls src="videos/testemunho/WhatsApp Video 2025-05-16 at 09.22.43 (2).mp4"></video>
+
+<video controls src="videos/testemunho/WhatsApp Video 2025-05-16 at 09.22.43.mp4"></video>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="categoria">
+
+
+<h2>
+🖥 Informática
+</h2>
+
+
+<div class="videos">
+
+
+<video controls src="videos/informatica/WhatsApp Video 2025-03-26 at 12.32.56.mp4"></video>
+
+<video controls src="videos/informatica/WhatsApp Video 2025-05-16 at 09.20.25.mp4"></video>
+
+<video controls src="videos/informatica/WhatsApp Video 2025-05-16 at 09.22.44.mp4"></video>
+
+<video controls src="videos/informatica/WhatsApp Video 2025-05-16 at 09.22.51.mp4"></video>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 S.M.A Soluções
+</p>
+
+</footer>
+
+
+
+</body>
+<script>
+
+let lastScroll = 0;
+const header = document.querySelector("header");
+
+
+window.addEventListener("scroll",()=>{
+
+    let currentScroll = window.pageYOffset;
+
+
+    if(currentScroll > lastScroll && currentScroll > 100){
+
+        // rolando para baixo
+        header.classList.add("hide");
+
+    }else{
+
+        // rolando para cima
+        header.classList.remove("hide");
+
+    }
+
+
+    lastScroll = currentScroll;
+
+});
+
+
+</script>
+</html>

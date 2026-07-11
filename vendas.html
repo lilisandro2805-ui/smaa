@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>S.M.A | Vendas</title>
+
+    <link rel="shortcut icon" href="Logo da sma Soluções.png">
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===================================
+   RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f8fafc;
+
+    color:#0f172a;
+
+}
+
+
+
+/* ===================================
+   HEADER
+=================================== */
+
+
+header{
+
+    width:100%;
+
+    height:90px;
+
+    background:transparent;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 7%;
+
+    box-shadow:
+    0 5px 25px rgba(0,0,0,.08);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+}
+
+
+
+.logo img{
+
+    width:160px;
+
+}
+
+
+
+nav ul{
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+
+}
+
+
+
+nav a{
+
+    text-decoration:none;
+
+    color:#0f172a;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+nav a:hover,
+nav .active{
+
+    color:#2563eb;
+
+}
+
+
+
+
+.btn{
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:13px 30px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(37,99,235,.35);
+
+}
+
+
+
+
+
+/* ===================================
+   VIDEO
+=================================== */
+
+
+.video-area{
+
+    width:100%;
+
+    height:500px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+
+
+.video-area video{
+
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+
+}
+
+
+
+.video-area::after{
+
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+
+    background:
+
+    linear-gradient(
+    rgba(0,40,120,.35),
+    rgba(0,0,0,.45)
+    );
+
+
+}
+
+
+
+
+
+/* ===================================
+   HERO
+=================================== */
+
+
+.hero{
+
+
+    text-align:center;
+
+
+    padding:80px 20px;
+
+
+}
+
+
+
+.hero h1{
+
+
+    font-size:50px;
+
+
+    color:#2563eb;
+
+
+    font-weight:800;
+
+
+}
+
+
+
+.hero p{
+
+
+    max-width:800px;
+
+
+    margin:20px auto;
+
+
+    font-size:20px;
+
+
+    color:#64748b;
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+
+
+/* ===================================
+   CARDS SERVIÇOS
+=================================== */
+
+
+.servicos{
+
+
+    width:90%;
+
+
+    max-width:1200px;
+
+
+    margin:50px auto 90px;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+.card{
+
+
+    background:white;
+
+
+    padding:40px 30px;
+
+
+    border-radius:25px;
+
+
+    text-align:center;
+
+
+    border:1px solid #e5e7eb;
+
+
+    box-shadow:
+
+    0 10px 30px rgba(15,23,42,.08);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.card:hover{
+
+
+    transform:
+
+    translateY(-12px);
+
+
+    box-shadow:
+
+    0 25px 50px rgba(37,99,235,.25);
+
+
+}
+
+
+
+
+.card h2{
+
+
+    color:#2563eb;
+
+
+    margin-bottom:20px;
+
+
+    font-size:25px;
+
+
+}
+
+
+
+
+.card p{
+
+
+    color:#64748b;
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+
+
+/* ===================================
+   CONTACTO
+=================================== */
+
+
+.contacto{
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #2563eb,
+    #60a5fa
+    );
+
+
+    color:white;
+
+
+    padding:70px 20px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+.contacto h2{
+
+
+    font-size:40px;
+
+
+}
+
+
+
+.contacto p{
+
+
+    margin:15px 0 30px;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+.contacto a{
+
+
+    display:inline-block;
+
+
+    background:white;
+
+
+    color:#2563eb;
+
+
+    text-decoration:none;
+
+
+    padding:15px 35px;
+
+
+    border-radius:40px;
+
+
+    font-weight:700;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.contacto a:hover{
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+
+
+/* ===================================
+   FOOTER
+=================================== */
+
+
+footer{
+
+
+    background:#0f172a;
+
+
+    color:white;
+
+
+    padding:30px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+/* ===================================
+   RESPONSIVO
+=================================== */
+
+
+@media(max-width:1000px){
+
+
+header{
+
+    height:auto;
+
+    padding:20px;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+nav ul{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+
+.servicos{
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+}
+
+
+
+.hero h1{
+
+    font-size:38px;
+
+}
+
+
+
+}
+
+
+
+
+
+@media(max-width:650px){
+
+
+nav ul{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+
+.servicos{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.video-area{
+
+    height:300px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:30px;
+
+}
+
+
+}
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- =========================
+        HEADER
+========================= -->
+
+
+<header>
+
+
+<div class="logo">
+
+<img src="Logo da sma Soluções.png" alt="S.M.A">
+
+</div>
+
+
+
+<nav>
+
+<ul>
+
+
+<li>
+<a href="index.html">
+Início
+</a>
+</li>
+
+
+
+<li>
+<a href="Curso.html">
+Cursos
+</a>
+</li>
+
+
+
+<li>
+<a href="vendas.html" class="active">
+Vendas
+</a>
+</li>
+
+
+
+<li>
+<a href="oque.html">
+O que fazemos
+</a>
+</li>
+
+
+
+<li>
+<a href="contactos.html">
+Contactos
+</a>
+</li>
+
+
+
+</ul>
+
+
+</nav>
+
+
+
+<a href="Cursos.html" class="btn">
+
+Inscrição
+
+</a>
+
+
+
+</header>
+
+
+
+
+
+
+
+<!-- =========================
+        VIDEO
+========================= -->
+
+
+<section class="video-area">
+
+
+<video autoplay muted loop playsinline>
+
+
+<source src="videos/sistema de gestao/WhatsApp Video 2025-03-13 at 19.40.00.mp4" type="video/mp4">
+
+
+</video>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =========================
+        HERO
+========================= -->
+
+
+<section class="hero">
+
+
+<h1>
+Tecnologia e Soluções para o seu futuro
+</h1>
+
+
+<p>
+Vendemos equipamentos eletrónicos,
+fazemos manutenção e instalamos soluções
+digitais para empresas e particulares.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =========================
+        SERVIÇOS
+========================= -->
+
+
+<section class="servicos">
+
+
+
+<div class="card">
+
+
+<h2>
+💻 Computadores
+</h2>
+
+
+<p>
+Venda de computadores portáteis,
+computadores de mesa e acessórios.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+🔧 Manutenção
+</h2>
+
+
+<p>
+Reparação e manutenção de computadores,
+impressoras e dispositivos eletrónicos.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+⚙️ Sistemas de Gestão
+</h2>
+
+
+<p>
+Instalação e configuração de softwares
+de gestão como Primavera e outros.
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =========================
+        CTA
+========================= -->
+
+
+<section class="contacto">
+
+
+<h2>
+Precisa de uma solução tecnológica?
+</h2>
+
+
+<p>
+Entre em contacto com a S.M.A.
+</p>
+
+
+<a href="contactos.html">
+Contactar agora
+</a>
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+© 2026 S.M.A Soluções. Todos os direitos reservados.
+</p>
+
+
+</footer>
+
+
+
+
+</body>
+<script>
+
+let lastScroll = 0;
+const header = document.querySelector("header");
+
+
+window.addEventListener("scroll",()=>{
+
+    let currentScroll = window.pageYOffset;
+
+
+    if(currentScroll > lastScroll && currentScroll > 100){
+
+        // rolando para baixo
+        header.classList.add("hide");
+
+    }else{
+
+        // rolando para cima
+        header.classList.remove("hide");
+
+    }
+
+
+    lastScroll = currentScroll;
+
+});
+
+
+</script>
+</html>
