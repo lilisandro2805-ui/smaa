@@ -1,0 +1,46 @@
+/* ============================
+   IMAGENS
+============================ */
+img {
+  margin: 40px auto;
+  max-width: 300px;
+  display: block;
+}
+
+/* ============================
+   SECTION COM ELEMENTOS CENTRALIZADOS
+============================ */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 200px auto;
+  gap: 20px;
+}
+
+/* ============================
+   DIV INTERNA (CARD, CONTAINER, ETC.)
+============================ */
+div {
+  max-width: 500px;
+  max-height: 500px;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+/* ============================
+   RESPONSIVO - CELULAR
+============================ */
+@media (max-width: 480px) {
+  div {
+    max-width: 100px;
+    max-height: auto;
+  }
+
+  img {
+    max-width: 90%;
+  }
+}
