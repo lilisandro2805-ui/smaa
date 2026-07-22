@@ -1,282 +1,564 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.M.A</title>
-    <link rel="stylesheet" href="style.css">
-   <link rel="shortcut icon" href="Logo da sma Soluções.png" type="image/x-icon">
-  
-    <style>
-    header{
-    padding: 20px;
-   box-shadow: 10px 10px 10px 10px black;
-}
-section{
-    width: 90%;
-    height: 600px;
-    display: flex;
-    overflow: hidden;
-    margin: auto;
- 
-}
-section > div:hover {
-    transform: translateY(-5px);
-    box-shadow: 10px 6px 16px rgba(0,0,0,0.15);
 
-  }
-div{
-    margin: 40px 40px 40px 40px ;
-    max-width: 400px;
-    text-align: center;
-    min-width: 200px;
-    border-radius: 20px;
-  }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-button{
-    background-color: rgb(255, 238, 0);
-    border-radius: 10px;
-    min-height: 40px;
-    padding: auto;
-    font-size: 1,5em;
-    margin: 10px auto;
-    text-align: center;
-    width: 90%;
+<title>S.M.A - Cursos</title>
 
-    
- }
-  button>a{
-    padding: 0px;
-    color: black;
- }
- img{
-    height: 90%;
- }
+<link rel="shortcut icon" href="Logo da sma Soluções.png" type="image/x-icon">
 
-      header{
-    padding: 20px;
-   box-shadow: 10px 10px 10px 10px black;
-}
-section{
-    max-width: 90%;
-    height: 600px;
-    display: flex;
 
- 
-}
-section > div:hover {
-    transform: translateY(-5px);
-    box-shadow: 10px 6px 16px rgba(0,0,0,0.15);
+<style>
 
-  }
-div{
-    margin: 40px 40px 40px 40px ;
-    max-width: 400px;
-    text-align: center;
-    min-width: 200px;
-    border-radius: 20px;
-  }
-
-button{
-    background-color: rgb(255, 238, 0);
-    border-radius: 10px;
-    min-height: 40px;
-    padding: auto;
-    font-size: 1,5em;
-    margin: 10px auto;
-    text-align: center;
-    width: 90%;
-
-    
- }
-  button>a{
-    padding: 0px;
-    color: black;
- }
- img{
-    height: 90%;
- }
-@media (max-width: 768px) {
-    header{
-        max-width: 100%;
-         overflow: hidden;
-
-        
-    }
-
-    li{
-     padding: auto;
-    }
-    section {
-        flex-direction: column;
-        margin: auto;
-        padding: 10px;
-         overflow: auto;
-    }
-    img{
-        max-width: 200px;
-    }
- section{
-    overflow: hidden;
- }
-   
-    button {
-        font-size: 1.2em;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-@media (max-width: 480px) {
-    button {
-        font-size: 1em;
-        padding: 8px;
-    }
-    div{
-    margin: 4px 4px 4px 4px ;
-    max-width: 200px;
-    text-align: center;
-    border-radius: 10px;
-  }
-  section{
-    width: 100%;
-    height: 300px;
-  }
-  div{
-    margin: auto;
-  }
+
+body{
+
+    background:#f1f5f9;
+
+    color:#1e293b;
+
+}
+
+
+/* HEADER */
+
+header{
+
+    background:white;
+
+    padding:20px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+
+header:hover{
+
+    box-shadow:0 10px 30px rgba(37,99,235,.3);
+
 }
 
 
 
+nav ul{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    list-style:none;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+nav a{
+
+    text-decoration:none;
+
+    color:#2563eb;
+
+    font-weight:bold;
+
+    padding:10px 20px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+
+
+nav a:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+
+
+/* TITULO */
+
+
+.titulo{
+
+    text-align:center;
+
+    margin:50px 0;
+
+}
+
+
+
+.titulo h1{
+
+    color:#2563eb;
+
+    font-size:45px;
+
+}
+
+
+
+.titulo p{
+
+    color:#64748b;
+
+    font-size:20px;
+
+}
+
+
+
+
+/* CURSOS */
+
+
+.cursos{
+
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+
+}
+
+
+
+
+.card{
+
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+    text-align:center;
+
+    padding-bottom:25px;
+
+
+}
+
+
+
+.card:hover{
+
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(37,99,235,.35);
+
+
+}
+
+
+
+.card img{
+
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+
+}
+
+
+
+
+.card h2{
+
+
+    margin:20px 10px;
+
+    color:#2563eb;
+
+
+}
+
+
+
+
+.btn{
+
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:12px 30px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+
+}
+
+
+
+.btn:hover{
+
+
+    background:#1d4ed8;
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+
+.inscricao{
+
+
+    text-align:center;
+
+    margin:60px;
+
+
+}
+
+
+.inscricao a{
+
+
+    background:#22c55e;
+
+    color:white;
+
+    padding:18px 50px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+footer{
+
+
+    margin-top:50px;
+
+    background:#0f172a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:600px){
+
+
+.titulo h1{
+
+    font-size:32px;
+
+}
+
+
+nav ul{
+
+    gap:10px;
+
+}
+
+
+.card img{
+
+    height:180px;
+
+}
+
+
+
+}
 
 
 </style>
+
+
 </head>
+
+
 <body>
-      <header>
 
 
+
+<header>
 
 
 <nav>
+
 <ul>
-    <a href="mes.html"><li>Inicio</li></a>
-    <a href="curso.html"><li>Cursos</li></a>
-    <a href="vendas.html"><li>Vendas</li></a>
-    <a href="oque.html"><li>O que fazemos</li></a>
+
+<li><a href="mes.html">Inicio</a></li>
+
+<li><a href="curso.html">Cursos</a></li>
+
+<li><a href="vendas.html">Vendas</a></li>
+
+<li><a href="oque.html">O que fazemos</a></li>
+
+
 </ul>
-
-
 
 
 </nav>
 
 
-    </header>
-
-
-       
-<section>
- <div>
-  <a href="Cursos.html">  <img src="programação/proweb.jpg" alt=""></a>
- <a href="Cursos.html"> <button><h1>programação web </h1></button></a>
- </div>
+</header>
 
 
 
-<div>
-  <a href="Cursos.html">  <img src="programação/c.jpg" alt=""></a>
-<a href="Cursos.html">  <button><h1>programação em  c </h1></button></a>
- </div>
 
+<div class="titulo">
+
+
+<h1>Cursos S.M.A</h1>
+
+<p>Aprenda tecnologia e desenvolva novas habilidades</p>
+
+
+</div>
 
 
 
 
 
-
- <div>
-  <a href="Cursos.html">  <img src="programação/logica.jpg" alt=""></a>
- <a href="Cursos.html"> <button><h1> logica de  programação </h1></button></a>
- </div>
+<section class="cursos">
 
 
 
+<div class="card">
 
+<img src="programação/proweb.jpg">
+
+<h2>Programação Web</h2>
+
+<a class="btn" href="Cursos.html">
+Inscrever-se
+</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="programação/c.jpg">
+
+<h2>Programação C</h2>
+
+<a class="btn" href="Cursos.html">
+Inscrever-se
+</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="programação/logica.jpg">
+
+<h2>Lógica de Programação</h2>
+
+<a class="btn" href="Cursos.html">
+Inscrever-se
+</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="programação/java.jpg">
+
+<h2>Programação Java</h2>
+
+<a class="btn" href="Cursos.html">
+Inscrever-se
+</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="programação/c++.jpg">
+
+<h2>Programação C++</h2>
+
+<a class="btn" href="Cursos.html">
+Inscrever-se
+</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="programação/xarp.jpg">
+
+<h2>Programação C#</h2>
+
+<a class="btn" href="Cursos.html">
+Inscrever-se
+</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="programação/pyton.jpg">
+
+<h2>Programação Python</h2>
+
+<a class="btn" href="Cursos.html">
+Inscrever-se
+</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="portu.jpg">
+
+<h2>Portugol</h2>
+
+<a class="btn" href="Cursos.html">
+Inscrever-se
+</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="videoframe_6431.png">
+
+<h2>Programação PHP</h2>
+
+<a class="btn" href="Cursos.html">
+Inscrever-se
+</a>
+
+</div>
 
 
 
 </section>
 
 
-<section>
-<div>
-  <a href="Cursos.html">  <img src="programação/java.jpg" alt=""></a>
-<a href="Cursos.html"><button>  <h1>programação java </h1></button></a>
- </div>
+
+
+
+<div class="inscricao">
+
+<a href="Cursos.html">
+FAZER INSCRIÇÃO
+</a>
+
+
+</div>
 
 
 
 
 
+<footer>
+
+S.M.A Soluções Tecnológicas
+
+</footer>
 
 
- <div>
-  <a href="Cursos.html">  <img src="programação/c++.jpg" alt=""></a>
-<a href="Cursos.html"> <button> <h1>programação em c++ </h1></button></a>
- </div>
-
-
-
-
-<div>
-  <a href="Cursos.html">  <img src="programação/xarp.jpg" alt=""></a>
-<a href="Cursos.html"> <button> <h1>programação </h1></button></a>
- </div>
-
-
-
-</section>
-
-<section>
-<div>
-  <a href="Cursos.html">  <img src="programação/pyton.jpg" alt=""></a>
- <a href="Cursos.html"> <button><h1>programação paiton </h1></button></a>
- </div>
-
-
-
-
-<div>
-  <a href="Cursos.html">  <img src="portu.jpg" alt=""></a>
-<a href="Cursos.html"> <button> <h1>programação portubol </h1></button></a>
- </div>
-
-
-
-
-
-
-
-
-<div>
-  <a href="Cursos.html">  <img src="videoframe_6431.png" alt=""></a>
-  <a href="Cursos.html"> <button> <h1>programação  php </h1></button></a>
- </div>
-
-
-
-
-
-
-
-
-
-</section>
-
-
-
-
-<a href="Cursos.html">  <button> <h1>INSCRIÇÃO</h1></button></a>
 
 </body>
 </html>
