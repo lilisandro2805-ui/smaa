@@ -1,98 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.M.A</title>
-  <style>
-    *{
-        margin: 0px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>S.M.A - Será que Sabes?</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
 body{
-    text-align: center;
- width: 100%;
- min-height: 100%;
- background-repeat: no-repeat;
- background-size: cover;
-  background-image: url(n.avif);  
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("n.avif");
+
+    background-size:cover;
+
+    background-position:center;
+
 }
-header{
-    color: aliceblue;
-    background-color: black;
-}
+
 section{
-    color: aliceblue;
-    width: 400px;
-    height: 400px;
-    margin: 0px auto;
-    border-radius: 10px 10px 10px 10px ;
-    box-shadow: 10px 10px 10px 10px  black;
-    background-image: linear-gradient(to top left,#538CDB,#7253DB,#5361DB,#53B7DB,#9E53DB,#858DDC);
+
+    width:90%;
+    max-width:650px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+
 }
-input{
-    background-color: antiquewhite;
-    border-radius: 5px;
+
+h1{
+
+    color:#2563eb;
+
+    margin-bottom:25px;
+
 }
 
+p{
 
+    font-size:22px;
 
-  </style>
+    line-height:1.6;
+
+    color:#334155;
+
+    margin-bottom:30px;
+
+}
+
+input[type="number"]{
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    border:1px solid #cbd5e1;
+
+    font-size:20px;
+
+}
+
+input[type="number"]:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+}
+
+button{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-4px);
+
+}
+
+#resultado{
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+#proximo{
+
+    display:none;
+
+    background:#22c55e;
+
+}
+
+#proximo:hover{
+
+    background:#16a34a;
+
+}
+
+</style>
+
 </head>
+
 <body>
-    <header>
-      <h1>   SERÁ QUE SABES? </h1>
-    </header>
-    
 
 <section>
-<h1> SE NA TUA CONTA TENS 1000kz E  COMEÇAS A GASTAR  OS VALORES APARTIR DAS [00:00 ] 0: HORAS DA NOITE <br><br>
-     QUANTAS HORAS VÁS LEVAR PARA GASTARES ESSE VALOR SABENDO QUE GASTAS 100KZ POR HORA? </h1>
-<br><br><br>
-<input type="number" name="ida" id="ida">
 
+<h1>🧠 SERÁ QUE SABES?</h1>
 
-<input type="button" value="Enviar resposta" onclick="ser()">
-<br> <br> <br> <br>
-<a href="jogo7.html"> <button id="id"></button></a>
+<p>
+
+Tens <strong>1.000 Kz</strong> na tua conta.
+
+<br><br>
+
+Começas a gastar dinheiro às <strong>00:00</strong> e gastas
+<strong>100 Kz por hora</strong>.
+
+<br><br>
+
+Após quantas horas o saldo será <strong>0 Kz</strong>?
+
+</p>
+
+<input
+type="number"
+id="resposta"
+placeholder="Digite a resposta">
+
+<button onclick="verificar()">
+
+Enviar resposta
+
+</button>
+
+<div id="resultado"></div>
+
+<a href="jogo7.html">
+
+<button id="proximo">
+
+Jogar outro jogo
+
+</button>
+
+</a>
 
 </section>
 
-
-
-
-
-
 <script>
 
-function ser(){
-var idade = document.getElementById("ida").value
-if(idade==10){
-    alert("voce asertou😊")
+function verificar(){
+
+let resposta=document.getElementById("resposta").value;
+
+let resultado=document.getElementById("resultado");
+
+if(resposta==10){
+
+resultado.innerHTML="✅ Parabéns! Você acertou.";
+
+resultado.style.color="green";
+
 }else{
-    alert("voce erro😂")
+
+resultado.innerHTML="❌ Você errou. A resposta correta é <strong>10 horas</strong>.";
+
+resultado.style.color="red";
+
 }
 
+document.getElementById("proximo").style.display="block";
 
-var mostra = document.getElementById("id").innerText= "jogar outro jogo"
 }
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
-
-
-
-
-
 
 </body>
 </html>
