@@ -1,97 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S.M.A</title>
-  <style>
-    *{
-        margin: 0px;
-    }
+
+    <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    text-align: center;
- width: 100%;
- min-height: 100%;
- background-repeat: no-repeat;
- background-size: cover;
-  background-image: url(l.avif);  
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    text-align:center;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    background-image:url("l.avif");
+
+    background-size:cover;
+
+    background-position:center;
+
 }
+
 header{
-    color: aliceblue;
-    background-color: black;
+
+    width:100%;
+
+    background:#000;
+
+    color:white;
+
+    padding:20px;
+
 }
+
 section{
-    color: aliceblue;
-    width: 400px;
-    height: 400px;
-    margin: 0px auto;
-    border-radius: 10px 10px 10px 10px ;
-    box-shadow: 10px 10px 10px 10px  black;
-    background-image: linear-gradient(to top left,#538CDB,#7253DB,#5361DB,#53B7DB,#9E53DB,#858DDC);
+
+    width:90%;
+
+    max-width:550px;
+
+    margin-top:60px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    color:white;
+
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+
 }
-input{
-    background-color: antiquewhite;
-    border-radius: 5px;
+
+h2{
+
+    margin-bottom:30px;
+
+    line-height:1.6;
+
 }
 
+input[type="number"]{
 
+    width:100%;
 
-  </style>
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    margin-bottom:20px;
+
+}
+
+input[type="button"]{
+
+    background:#22c55e;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+input[type="button"]:hover{
+
+    background:#16a34a;
+
+}
+
+button{
+
+    display:none;
+
+    margin-top:25px;
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+}
+
+    </style>
+
 </head>
+
 <body>
-    <header>
-      <h1>   SERÁ QUE SABES? </h1>
-    </header>
-    
+
+<header>
+
+<h1>🧠 SERÁ QUE SABES?</h1>
+
+</header>
 
 <section>
-<h1> Se voce corre por 1 dia e a cada ora voce perde 2kg quantos kilos vc perdeu?</h1>
-<br><br><br>
-<input type="number" name="ida" id="ida">
 
+<h2>
+Se uma pessoa corre durante <strong>24 horas</strong> e,
+hipoteticamente, perde <strong>2 kg por hora</strong>,
+quantos quilos terá perdido?
+</h2>
+
+<input type="number" id="ida" placeholder="Digite a resposta">
 
 <input type="button" value="Enviar resposta" onclick="ser()">
-<br> <br> <br> <br>
-<a href="jogo6.html"> <button id="id"></button></a>
+
+<br><br>
+
+<a href="jogo6.html">
+
+<button id="id">
+Jogar outro jogo
+</button>
+
+</a>
 
 </section>
-
-
-
-
-
 
 <script>
 
 function ser(){
-var idade = document.getElementById("ida").value
-if(idade==48){
-    alert("voce asertou😊")
+
+let resposta=document.getElementById("ida").value;
+
+if(resposta==48){
+
+alert("🎉 Você acertou!");
+
 }else{
-    alert("voce erro😂")
+
+alert("❌ Você errou! A resposta correta é 48.");
+
 }
 
+document.getElementById("id").style.display="inline-block";
 
-var mostra = document.getElementById("id").innerText= "jogar outro jogo"
 }
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
-
-
-
-
-
 
 </body>
 </html>
