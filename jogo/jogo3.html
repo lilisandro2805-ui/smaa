@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+      body{
+        background-color: blue;
+        background-image: url(uma-pintura-digital-de-um-lago-com-montanhas-e-as-palavras-por-do-sol_872754-2153.avif);
+       background-size: cover;
+      }
+  p{
+    background-color: antiquewhite;
+    border-radius: 10px;
+  }
+p:hover{
+    transform: translateY(-5px);
+    box-shadow: 10px 6px 16px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+ h1{
+        color: aliceblue;
+      }
+
+
+
+    </style>
+     
+
+   <div>
+  <h1> ESCOLHE ENTRE  [PEDRA]  [PAPEL]   [TESOURA] </h1>
+    
+   <p onclick="opsão1()" id="um">TESOURA </p>
+
+
+
+   <p onclick="opsão2()" id="um2">PEDRA
+     </p>
+
+   <p onclick="opsão3()" id="um3"> PAPEL </p>
+
+
+
+<a href="jogo4.html">
+       <button></button></a>
+
+
+
+
+
+   </div>
+
+
+
+
+
+<script>
+function opsão1(){
+ var um = document.getElementById("um").style.background="rgb(255, 38, 0)"
+  var um2 = document.getElementById("um2").style.background="   rgb(0, 255, 55)"
+ var um3 = document.getElementById("um3").style.background="rgb(255, 38, 0)"
+alert("enpate escolhi  tesoura🤔")
+document.querySelector("button").innerText="jogar outro jogo"
+
+}
+
+
+
+function opsão2(){
+ var um = document.getElementById("um").style.background="rgb(255, 38, 0)"
+  var um2 = document.getElementById("um2").style.background="   rgb(0, 255, 55)"
+ var um3 = document.getElementById("um3").style.background="rgb(255, 38, 0)"
+alert("vc ganhou😒 escolhi  tesoura")
+document.querySelector("button").innerText="jogar outro jogo"
+
+}
+
+
+
+function opsão3(){
+ var um = document.getElementById("um").style.background="rgb(255, 38, 0)"
+  var um2 = document.getElementById("um2").style.background="   rgb(0, 255, 55)"
+ var um3 = document.getElementById("um3").style.background="rgb(255, 38, 0)"
+alert("vc perdeu 🤣 escoli tesoura")
+document.querySelector("button").innerText="jogar outro jogo"
+
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
