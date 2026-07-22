@@ -1,109 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quiz Angola</title>
+
+<link rel="stylesheet" href="jogo.css">
+
 </head>
+
 <body>
-    <style>
-      body{
-        background-color: blue;
-        background-image: url(llllll.avif);
-         background-size: cover;
-        
-       
-      }
-      h1{
-        color: aliceblue;
-      }
-  p{
-    background-color: antiquewhite;
-    border-radius: 10px;
-  }
-p:hover{
-    transform: translateY(-5px);
-    box-shadow: 10px 6px 16px rgba(0,0,0,0.15);
-    cursor: pointer;
-}
 
+<div class="quiz">
 
+<h1>🇦🇴 Qual é a opção correta?</h1>
 
+<button class="opcao" onclick="responder(false,this)">
+Angola foi colonizada pela Espanha
+</button>
 
-    </style>
-     
+<button class="opcao" onclick="responder(true,this)">
+Angola foi colonizada por Portugal
+</button>
 
-   <div>
-   <h1>QUAL É A OPÇÃO CERTA? </h1>
-    
-   <p onclick="opsão1()" id="um">ANGOLA FOI COLONIZADO PELA ESPANHA</p>
-
-
-
-   <p onclick="opsão2()" id="um2">ANGOLA FOI COLONIZADO PELO PORTUGAL</p>
-
-   <p onclick="opsão3()" id="um3">ANGOLA FOI COLONIZADO PELA INGLATERRA </p>
-
-
+<button class="opcao" onclick="responder(false,this)">
+Angola foi colonizada pela Inglaterra
+</button>
 
 <a href="jogo2.html">
-       <button></button></a>
 
+<button id="proximo">
 
+Jogar outro jogo
 
+</button>
 
+</a>
 
-   </div>
-
-
-
-
+</div>
 
 <script>
-function opsão1(){
- var um = document.getElementById("um").style.background="rgb(255, 38, 0)"
-  var um2 = document.getElementById("um2").style.background="   rgb(0, 255, 55)"
- var um3 = document.getElementById("um3").style.background="rgb(255, 38, 0)"
-alert("vc erro🤣")
-document.querySelector("button").innerText="jogar outro jogo"
+
+function responder(correta,botao){
+
+const opcoes=document.querySelectorAll(".opcao");
+
+opcoes.forEach(op=>{
+
+op.disabled=true;
+
+});
+
+if(correta){
+
+botao.classList.add("certa");
+
+alert("👏 Parabéns! Resposta correta.");
+
+}else{
+
+botao.classList.add("errada");
+
+opcoes[1].classList.add("certa");
+
+alert("🤣 Resposta errada.");
 
 }
 
-
-
-function opsão2(){
- var um = document.getElementById("um").style.background="rgb(255, 38, 0)"
-  var um2 = document.getElementById("um2").style.background="   rgb(0, 255, 55)"
- var um3 = document.getElementById("um3").style.background="rgb(255, 38, 0)"
-alert("vc asertou👏")
-document.querySelector("button").innerText="jogar outro jogo"
-
-}
-
-
-
-function opsão3(){
- var um = document.getElementById("um").style.background="rgb(255, 38, 0)"
-  var um2 = document.getElementById("um2").style.background="   rgb(0, 255, 55)"
- var um3 = document.getElementById("um3").style.background="rgb(255, 38, 0)"
-alert("vc erro🤣")
-document.querySelector("button").innerText="jogar outro jogo"
+document.getElementById("proximo").style.display="block";
 
 }
 
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
+
 </html>
