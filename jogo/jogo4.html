@@ -1,97 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.M.A</title>
-  <style>
-    *{
-        margin: 0px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Será que Sabes?</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,Arial,sans-serif;
+}
+
 body{
-    text-align: center;
- width: 100%;
- min-height: 100%;
- background-repeat: no-repeat;
- background-size: cover;
-  background-image: url(uma-pintura-digital-de-um-lago-com-montanhas-e-as-palavras-por-do-sol_872754-2153.avif);  
-}
-header{
-    color: aliceblue;
-    background-color: black;
-}
-section{
-    color: aliceblue;
-    width: 400px;
-    height: 400px;
-    margin: 0px auto;
-    border-radius: 10px 10px 10px 10px ;
-    box-shadow: 10px 10px 10px 10px  black;
-    background-image: linear-gradient(to top left,#538CDB,#7253DB,#5361DB,#53B7DB,#9E53DB,#858DDC);
-}
-input{
-    background-color: antiquewhite;
-    border-radius: 5px;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(rgba(5,8,22,.75),rgba(5,8,22,.75)),
+    url("uma-pintura-digital-de-um-lago-com-montanhas-e-as-palavras-por-do-sol_872754-2153.avif");
+
+    background-size:cover;
+
+    background-position:center;
+
 }
 
+.card{
 
+    width:90%;
+    max-width:600px;
 
-  </style>
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.4);
+
+}
+
+h1{
+
+    color:#2563eb;
+
+    margin-bottom:30px;
+
+}
+
+p{
+
+    font-size:20px;
+
+    color:#334155;
+
+    margin-bottom:25px;
+
+}
+
+input[type=number]{
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    border:1px solid #cbd5e1;
+
+    font-size:18px;
+
+    margin-bottom:20px;
+
+}
+
+input[type=number]:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    background:#1d4ed8;
+
+}
+
+#resultado{
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+#proximo{
+
+    display:none;
+
+    margin-top:25px;
+
+}
+
+</style>
+
 </head>
+
 <body>
-    <header>
-     <h1>   SERÁ QUE SABES? </h1>
-    </header>
-    
 
-<section>
-<h1>Uma pessoa nascida em 2008 tem quantos anos em 2025?</h1>
-<br><br><br>
-<input type="number" name="ida" id="ida">
+<div class="card">
 
+<h1>🧠 Será que Sabes?</h1>
 
-<input type="button" value="Enviar resposta" onclick="ser()">
-<br> <br> <br> <br>
-<a href="jogo5.html"> <button id="id"></button></a>
+<p>Uma pessoa nascida em <strong>2008</strong> tem quantos anos em <strong>2025</strong>?</p>
 
-</section>
+<input type="number" id="idade" placeholder="Escreve a resposta">
 
+<button onclick="verificar()">
 
+Enviar resposta
 
+</button>
 
+<div id="resultado"></div>
 
+<a href="jogo5.html">
+
+<button id="proximo">
+
+Jogar outro jogo
+
+</button>
+
+</a>
+
+</div>
 
 <script>
 
-function ser(){
-var idade = document.getElementById("ida").value
+function verificar(){
+
+const idade=document.getElementById("idade").value;
+
+const resultado=document.getElementById("resultado");
+
 if(idade==17){
-    alert("voce asertou😊")
+
+resultado.innerHTML="✅ Parabéns! Você acertou.";
+
+resultado.style.color="#16a34a";
+
 }else{
-    alert("voce erro😂")
+
+resultado.innerHTML="❌ Resposta errada. A resposta correta é 17 anos.";
+
+resultado.style.color="#dc2626";
+
 }
 
+document.getElementById("proximo").style.display="block";
 
-var mostra = document.getElementById("id").innerText= "jogar outro jogo"
 }
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
-
-
-
-
-
 
 </body>
 </html>
