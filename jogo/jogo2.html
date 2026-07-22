@@ -1,106 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <style>
-      body{
-        background-color: blue;
-       background-image: url(OIP.jpg);
-        background-size: cover;
-      }
-  p{
-    background-color: antiquewhite;
-    border-radius: 10px;
-  }
-p:hover{
-    transform: translateY(-5px);
-    box-shadow: 10px 6px 16px rgba(0,0,0,0.15);
-    cursor: pointer;
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pedra Papel Tesoura</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
- h1{
-        color: aliceblue;
-      }
 
+body{
 
+font-family:Arial,Helvetica,sans-serif;
 
-    </style>
-     
+height:100vh;
 
-   <div>
-   <h1> ESCOLHE ENTRE  [PEDRA]  [PAPEL]   [TESOURA] </h1>
-    
-   <p onclick="opsão1()" id="um">PEDRA </p>
+display:flex;
 
+justify-content:center;
 
+align-items:center;
 
-   <p onclick="opsão2()" id="um2">PAPEL </p>
+background:
+linear-gradient(135deg,#08142c,#2563eb);
 
-   <p onclick="opsão3()" id="um3"> TESOURA </p>
+}
 
+.quiz{
 
+background:white;
 
-<a href="jogo3.html">
-       <button></button></a>
+padding:40px;
 
+border-radius:20px;
 
+width:90%;
+max-width:600px;
 
+text-align:center;
 
+box-shadow:0 20px 50px rgba(0,0,0,.4);
 
-   </div>
+}
 
+h1{
 
+color:#2563eb;
 
+margin-bottom:30px;
 
+}
+
+button{
+
+width:100%;
+
+padding:18px;
+
+margin:10px 0;
+
+border:none;
+
+border-radius:12px;
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.3s;
+
+background:#eef4ff;
+
+}
+
+button:hover{
+
+background:#2563eb;
+
+color:white;
+
+transform:translateY(-5px);
+
+}
+
+#resultado{
+
+margin-top:25px;
+
+font-size:22px;
+
+font-weight:bold;
+
+}
+
+#novo{
+
+display:none;
+
+margin-top:30px;
+
+background:#22c55e;
+
+color:white;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="quiz">
+
+<h1>✊ Pedra, Papel ou Tesoura</h1>
+
+<button onclick="jogar('Pedra')">✊ Pedra</button>
+
+<button onclick="jogar('Papel')">✋ Papel</button>
+
+<button onclick="jogar('Tesoura')">✌ Tesoura</button>
+
+<p id="resultado"></p>
+
+<button id="novo" onclick="location.href='jogo3.html'">
+
+Jogar outro jogo
+
+</button>
+
+</div>
 
 <script>
-function opsão1(){
- var um = document.getElementById("um").style.background="rgb(255, 38, 0)"
-  var um2 = document.getElementById("um2").style.background="   rgb(0, 255, 55)"
- var um3 = document.getElementById("um3").style.background="rgb(255, 38, 0)"
-alert("enpate😒 escolhi pedra")
-document.querySelector("button").innerText="jogar outro jogo"
+
+function jogar(jogador){
+
+const escolhas=["Pedra","Papel","Tesoura"];
+
+const computador=escolhas[Math.floor(Math.random()*3)];
+
+let texto="";
+
+if(jogador===computador){
+
+texto="😐 Empate! Eu escolhi "+computador;
 
 }
 
+else if(
 
+(jogador==="Pedra" && computador==="Tesoura") ||
 
-function opsão2(){
- var um = document.getElementById("um").style.background="rgb(255, 38, 0)"
-  var um2 = document.getElementById("um2").style.background="   rgb(0, 255, 55)"
- var um3 = document.getElementById("um3").style.background="rgb(255, 38, 0)"
-alert("vc ganhou 😉 escolhi pedra")
-document.querySelector("button").innerText="jogar outro jogo"
+(jogador==="Papel" && computador==="Pedra") ||
+
+(jogador==="Tesoura" && computador==="Papel")
+
+){
+
+texto="🎉 Parabéns! Eu escolhi "+computador;
 
 }
 
+else{
 
+texto="😅 Você perdeu! Eu escolhi "+computador;
 
-function opsão3(){
- var um = document.getElementById("um").style.background="rgb(255, 38, 0)"
-  var um2 = document.getElementById("um2").style.background="   rgb(0, 255, 55)"
- var um3 = document.getElementById("um3").style.background="rgb(255, 38, 0)"
-alert("vc perdeu 🤣 escoli pedra")
-document.querySelector("button").innerText="jogar outro jogo"
+}
+
+document.getElementById("resultado").innerHTML=texto;
+
+document.getElementById("novo").style.display="block";
 
 }
 
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
+
 </html>
