@@ -1,116 +1,595 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.M.A</title>
-    <link rel="shortcut icon" href="Logo da sma Soluções.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>S.M.A - Curso de Inglês</title>
+
+<link rel="shortcut icon" href="Logo da sma Soluções.png" type="image/x-icon">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#eef6ff,#dbeafe);
+
+    color:#1e293b;
+
+}
+
+/* HEADER */
+
+header{
+
+    background:#ffffff;
+
+    padding:18px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+nav ul{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    list-style:none;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#2563eb;
+
+    font-weight:bold;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+/* CURSO */
+
+section{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:60px auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:50px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.imagem{
+
+    flex:1;
+
+}
+
+.imagem img{
+
+    width:100%;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+}
+
+.info{
+
+    flex:1;
+
+}
+
+.info h1{
+
+    font-size:42px;
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+
+}
+
+.info p{
+
+    font-size:18px;
+
+    color:#475569;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:15px 40px;
+
+    border-radius:50px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(37,99,235,.35);
+
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#0f172a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:60px;
+
+}
+
+footer a{
+
+    color:#60a5fa;
+
+    text-decoration:none;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+section{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.info h1{
+
+    font-size:32px;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-   <style>
-      div{
-    margin: 40px auto ;
-    max-width: 600px;
-    text-align: center;
-    min-width: 200px;
-  }
 
-button{
-    background-color: rgb(255, 238, 0);
-    border-radius: 10px;
-    min-height: 40px;
-    padding: auto;
-    font-size: 1,5em;
-    margin: 10px auto;
-    text-align: center;
-    width: 90%;
-
-    
- }
-  button>a{
-    padding: 0px;
-    color: black;
- }
- img{
-    height: 90%;
-    
- }
-   </style>
 <header>
 
-
-
-
 <nav>
+
 <ul>
-    <a href="mes.html"><li>Inicio</li></a>
-    <a href="curso.html"><li>Cursos</li></a>
-    <a href="vendas.html"><li>Vendas</li></a>
-    <a href="oque.html"><li>O que fazemos</li></a>
-        <a href="Cursos.html">INSCRIÇÃO</a>
+
+<li><a href="mes.html">Início</a></li>
+
+<li><a href="curso.html">Cursos</a></li>
+
+<li><a href="vendas.html">Vendas</a></li>
+
+<li><a href="oque.html">O que fazemos</a></li>
+
+<li><a href="Cursos.html">Inscrição</a></li>
+
 </ul>
-
-
-
 
 </nav>
 
-
-    </header>
-
-
-
-
-
+</header>
 
 <section>
 
+<div class="imagem">
 
-
-
-<div>
-
-<img src="flyer-sma_solu-tecnologica (2).png" alt="">
-
-<a href="Cursos.html"><button>inscrevase</button></a>
+<img src="flyer-sma_solu-tecnologica (2).png" alt="Curso de Inglês">
 
 </div>
 
+<div class="info">
 
+<h1>Curso de Inglês</h1>
 
+<p>
 
+Aprenda Inglês de forma simples, moderna e prática.
 
+Desenvolva a conversação, escrita, leitura e compreensão com professores qualificados e aulas adaptadas ao seu nível.
 
+</p>
 
+<a href="Cursos.html" class="btn">
 
+Fazer Inscrição
 
+</a><!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>S.M.A - Curso de Inglês</title>
 
+<link rel="shortcut icon" href="Logo da sma Soluções.png" type="image/x-icon">
 
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#eef6ff,#dbeafe);
+
+    color:#1e293b;
+
+}
+
+/* HEADER */
+
+header{
+
+    background:#ffffff;
+
+    padding:18px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+nav ul{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    list-style:none;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#2563eb;
+
+    font-weight:bold;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+/* CURSO */
+
+section{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:60px auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:50px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.imagem{
+
+    flex:1;
+
+}
+
+.imagem img{
+
+    width:100%;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+}
+
+.info{
+
+    flex:1;
+
+}
+
+.info h1{
+
+    font-size:42px;
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+
+}
+
+.info p{
+
+    font-size:18px;
+
+    color:#475569;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:15px 40px;
+
+    border-radius:50px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(37,99,235,.35);
+
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#0f172a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:60px;
+
+}
+
+footer a{
+
+    color:#60a5fa;
+
+    text-decoration:none;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+section{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.info h1{
+
+    font-size:32px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<ul>
+
+<li><a href="mes.html">Início</a></li>
+
+<li><a href="curso.html">Cursos</a></li>
+
+<li><a href="vendas.html">Vendas</a></li>
+
+<li><a href="oque.html">O que fazemos</a></li>
+
+<li><a href="Cursos.html">Inscrição</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section>
+
+<div class="imagem">
+
+<img src="flyer-sma_solu-tecnologica (2).png" alt="Curso de Inglês">
+
+</div>
+
+<div class="info">
+
+<h1>Curso de Inglês</h1>
+
+<p>
+
+Aprenda Inglês de forma simples, moderna e prática.
+
+Desenvolva a conversação, escrita, leitura e compreensão com professores qualificados e aulas adaptadas ao seu nível.
+
+</p>
+
+<a href="Cursos.html" class="btn">
+
+Fazer Inscrição
+
+</a>
+
+</div>
 
 </section>
 
+<footer>
 
+Feito por
+<a href="https://www.instagram.com/lilisandro560/" target="_blank">
+Lisandro
+</a>
 
+</footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <footer>feito por <a href="https://www.instagram.com/lilisandro560/">lisandro</a></footer>
 </body>
 </html>
 
+</div>
 
+</section>
+
+<footer>
+
+Feito por
+<a href="https://www.instagram.com/lilisandro560/" target="_blank">
+Lisandro
+</a>
+
+</footer>
+
+</body>
+</html>
