@@ -22,6 +22,7 @@ body{
     overflow-x:hidden;
 
     background:#050b18;
+    background-color: #050b18;
 
 }
 
@@ -92,7 +93,8 @@ header{
     justify-content:space-between;
 
 
-    background:#ffffff;
+    background:black;
+    color: #ffffff;
 
 
     position:absolute;
@@ -136,8 +138,8 @@ nav ul{
 
 nav a{
 
-    color:#0f172a;
-
+    color:#ffffff;
+    text-decoration: line-through;
     text-decoration:none;
 
     font-weight:600;
