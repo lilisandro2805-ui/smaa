@@ -14,18 +14,11 @@ html{
 
 
 body{
-
     font-family:'Poppins',sans-serif;
-
     color:#ffffff;
-
     overflow-x:hidden;
-
-    background:#050b18;
-    background-color: #050b18;
-
+    background:#000;
 }
-
 
 
 /* =====================================
