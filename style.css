@@ -135,15 +135,9 @@ nav ul{
 
 
 nav a{
-
-    color:#ffffff;
-    text-decoration: line-through;
+    color:#fff;
     text-decoration:none;
-
-    font-weight:600;
-
-    transition:.3s;
-
+    font-weight:700;
 }
 
 
