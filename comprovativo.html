@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>S.M.A | Comprovativo</title>
+
+<link rel="shortcut icon" href="Logo da sma Soluções.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =====================================
+        RESET
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    background:
+
+    radial-gradient(
+        circle at top,
+        #2563eb,
+        #050816 70%
+    );
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+/* =====================================
+        HEADER
+===================================== */
+
+header{
+
+    width:100%;
+
+    padding:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    background:rgba(0,0,0,.3);
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+header img{
+
+    width:200px;
+
+}
+
+
+/* =====================================
+        FORMULÁRIO
+===================================== */
+
+.formulario{
+
+    width:90%;
+
+    max-width:600px;
+
+    margin:50px auto;
+
+    background:white;
+
+    color:#0f172a;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.4);
+
+    animation:
+
+    aparecer .8s ease;
+
+}
+
+
+.formulario h1{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    font-size:35px;
+
+    margin-bottom:10px;
+
+}
+
+
+.formulario p{
+
+    text-align:center;
+
+    color:#64748b;
+
+    margin-bottom:35px;
+
+}
+
+
+/* =====================================
+        CAMPOS
+===================================== */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+label{
+
+    font-weight:600;
+
+    margin-top:10px;
+
+}
+
+
+input,
+select{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    border:1px solid #cbd5e1;
+
+    outline:none;
+
+    font-size:16px;
+
+    font-family:'Poppins',sans-serif;
+
+    transition:.3s;
+
+    background:white;
+
+}
+
+
+input:focus,
+select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:
+
+    0 0 10px rgba(37,99,235,.3);
+
+}
+
+
+/* =====================================
+        INSCRIÇÃO
+===================================== */
+
+.inscricao{
+
+    margin-top:10px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    background:#eff6ff;
+
+    color:#1e40af;
+
+    font-weight:600;
+
+    text-align:center;
+
+}
+
+
+/* =====================================
+        VALOR
+===================================== */
+
+#valorContainer{
+
+    display:none;
+
+}
+
+
+#valor{
+
+    appearance:textfield;
+
+}
+
+
+#valor::-webkit-outer-spin-button,
+#valor::-webkit-inner-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+
+.aviso{
+
+    font-size:13px;
+
+    color:#64748b;
+
+    margin-top:-5px;
+
+}
+
+
+/* =====================================
+        RESULTADO
+===================================== */
+
+#resultado{
+
+    margin-top:25px;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    display:none;
+
+}
+
+
+#resultado h3{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+
+}
+
+
+.info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    padding:11px 0;
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+
+.info strong{
+
+    color:#334155;
+
+}
+
+
+.info span{
+
+    text-align:right;
+
+    color:#0f172a;
+
+}
+
+
+.total{
+
+    margin-top:10px;
+
+    font-size:19px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+}
+
+
+/* =====================================
+        BOTÕES
+===================================== */
+
+button{
+
+    margin-top:20px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 15px 30px rgba(37,99,235,.4);
+
+}
+
+
+#btnImprimir{
+
+    background:#16a34a;
+
+}
+
+
+#btnImprimir:hover{
+
+    background:#15803d;
+
+}
+
+
+/* =====================================
+        ANIMAÇÃO
+===================================== */
+
+@keyframes aparecer{
+
+from{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+
+
+/* =====================================
+        RESPONSIVO
+===================================== */
+
+@media(max-width:600px){
+
+    .formulario{
+
+        padding:25px;
+
+    }
+
+
+    .formulario h1{
+
+        font-size:28px;
+
+    }
+
+
+    header img{
+
+        width:150px;
+
+    }
+
+
+    .info{
+
+        flex-direction:column;
+
+        gap:3px;
+
+    }
+
+
+    .info span{
+
+        text-align:left;
+
+    }
+
+}
+
+
+/* =====================================
+        IMPRESSÃO
+===================================== */
+
+@media print{
+
+    body{
+
+        background:white;
+
+        color:#000;
+
+    }
+
+
+    header{
+
+        background:white;
+
+        backdrop-filter:none;
+
+    }
+
+
+    header img{
+
+        width:150px;
+
+    }
+
+
+    .formulario{
+
+        margin:20px auto;
+
+        box-shadow:none;
+
+        border:1px solid #ddd;
+
+    }
+
+
+    .formulario > p,
+    form,
+    #btnImprimir{
+
+        display:none !important;
+
+    }
+
+
+    #resultado{
+
+        display:block !important;
+
+        border:1px solid #000;
+
+        background:white;
+
+    }
+
+}
+.im{
+    width: 100px;
+}
+
+
+
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <img
+        src="Logo da sma Soluções.png"
+        alt="S.M.A"
+    >
+
+</header>
+
+
+
+<main class="formulario">
+
+    <h1>
+        Comprovativo
+    </h1>
+
+
+    <p>
+        Preencha os seus dados corretamente.
+    </p>
+
+
+
+    <form onsubmit="gerarComprovativo(event)">
+
+
+        <!-- CURSO -->
+
+        <label for="curso">
+            Curso
+        </label>
+
+
+        <select
+            id="curso"
+            onchange="verificarCurso()"
+            required
+        >
+
+            <option value="">
+                Selecione o curso
+            </option>
+
+            <option value="Inglês">
+                Inglês
+            </option>
+
+            <option value="Informática">
+                Informática
+            </option>
+
+            <option value="Contabilidade">
+                Contabilidade
+            </option>
+
+            <option value="Gestão">
+                Gestão
+            </option>
+
+            <option value="Marketing">
+                Marketing
+            </option>
+
+            <option value="Outro">
+                Outro
+            </option>
+
+        </select>
+
+
+
+        <!-- NOME -->
+
+        <label for="nome">
+            Nome completo
+        </label>
+
+
+        <input
+            type="text"
+            id="nome"
+            placeholder="Digite o seu nome"
+            required
+        >
+
+
+
+        <!-- INSCRIÇÃO -->
+
+        <div class="inscricao">
+
+            Taxa de inscrição:
+            <strong>2.000 Kz</strong>
+
+        </div>
+
+
+
+        <!-- VALOR DOS OUTROS CURSOS -->
+
+        <div id="valorContainer">
+
+            <label for="valor">
+                Valor mensal
+            </label>
+
+
+            <input
+                type="number"
+                id="valor"
+                min="10000"
+                max="12000"
+                step="100"
+                placeholder="10.000 - 12.000 Kz"
+            >
+
+
+            <span class="aviso">
+
+                O valor deve estar entre
+                10.000 Kz e 12.000 Kz.
+
+            </span>
+
+        </div>
+
+
+
+        <button
+            type="submit"
+            id="btnGerar"
+        >
+
+            Receber o comprovativo
+
+        </button>
+
+
+    </form>
+
+
+
+    <!-- =================================
+            COMPROVATIVO
+    ================================== -->
+
+    <div id="resultado">
+
+
+        <h3>
+            COMPROVATIVO DE PAGAMENTO
+        </h3>
+
+
+
+        <div class="info">
+
+            <strong>
+                Nome:
+            </strong>
+
+            <span id="mostrarNome"></span>
+
+        </div>
+
+
+
+        <div class="info">
+
+            <strong>
+                Curso:
+            </strong>
+
+            <span id="mostrarCurso"></span>
+
+        </div>
+
+
+
+        <div class="info">
+
+            <strong>
+                Inscrição:
+            </strong>
+
+            <span id="mostrarInscricao"></span>
+
+        </div>
+
+
+
+        <div class="info">
+
+            <strong>
+                Duração:
+            </strong>
+
+            <span id="mostrarDuracao"></span>
+
+        </div>
+
+
+
+        <div class="info">
+
+            <strong>
+                Mensalidade:
+            </strong>
+
+            <span id="mostrarMensalidade"></span>
+
+        </div>
+
+
+
+        <div class="info total">
+
+            <strong>
+                Valor total:
+            </strong>
+
+            <span id="mostrarTotal"></span>
+
+        </div>
+
+
+
+        <div class="info">
+
+            <strong>
+                Data:
+            </strong>
+
+            <span id="mostrarData"></span>
+
+        </div>
+
+                              <img src="YAMY.jpeg" alt="" class="im" >
+
+        <button
+            type="button"
+            id="btnImprimir"
+            onclick="imprimirComprovativo()"
+        >
+
+            🖨️ Imprimir comprovativo
+
+        </button>
+
+
+    </div>
+
+
+</main>
+
+
+
+<script>
+
+
+/* =====================================
+        VALOR DA INSCRIÇÃO
+===================================== */
+
+const VALOR_INSCRICAO = 2000;
+
+
+
+/* =====================================
+        VERIFICAR CURSO
+===================================== */
+
+function verificarCurso(){
+
+    const curso =
+        document.getElementById("curso").value;
+
+
+    const valorContainer =
+        document.getElementById("valorContainer");
+
+
+    const valor =
+        document.getElementById("valor");
+
+
+    /*
+        INGLÊS
+        7.000 Kz por mês
+    */
+
+    if(curso === "Inglês"){
+
+        valorContainer.style.display = "none";
+
+        valor.required = false;
+
+        valor.value = "";
+
+    }
+
+
+    /*
+        OUTROS CURSOS
+        10.000 - 12.000 Kz
+    */
+
+    else if(curso !== ""){
+
+        valorContainer.style.display = "block";
+
+        valor.required = true;
+
+    }
+
+
+    else{
+
+        valorContainer.style.display = "none";
+
+        valor.required = false;
+
+        valor.value = "";
+
+    }
+
+}
+
+
+
+/* =====================================
+        FORMATAR KZ
+===================================== */
+
+function formatarKz(valor){
+
+    return Number(valor).toLocaleString("pt-AO") + " Kz";
+
+}
+
+
+
+/* =====================================
+        GERAR COMPROVATIVO
+===================================== */
+
+function gerarComprovativo(event){
+
+    event.preventDefault();
+
+
+    const nome =
+        document.getElementById("nome")
+        .value
+        .trim();
+
+
+    const curso =
+        document.getElementById("curso")
+        .value;
+
+
+    const valorInput =
+        document.getElementById("valor")
+        .value;
+
+
+    let mensalidade;
+
+    let duracao;
+
+    let total;
+
+
+
+    /* =================================
+            CURSO DE INGLÊS
+    ================================== */
+
+    if(curso === "Inglês"){
+
+        mensalidade = 7000;
+
+        duracao = "1 mês";
+
+        total =
+            VALOR_INSCRICAO +
+            mensalidade;
+
+    }
+
+
+
+    /* =================================
+            OUTROS CURSOS
+    ================================== */
+
+    else{
+
+        mensalidade = Number(valorInput);
+
+
+        /*
+            LIMITES DE SEGURANÇA
+        */
+
+        if(
+            isNaN(mensalidade) ||
+            mensalidade < 10000 ||
+            mensalidade > 12000
+        ){
+
+            alert(
+                "O valor mensal deve estar entre 10.000 Kz e 12.000 Kz."
+            );
+
+            return;
+
+        }
+
+
+        duracao = "2 meses";
+
+
+        /*
+            2 MESES + INSCRIÇÃO
+        */
+
+        total =
+            VALOR_INSCRICAO +
+            (mensalidade );
+
+    }
+
+
+
+    /* =================================
+            PREENCHER COMPROVATIVO
+    ================================== */
+
+    document.getElementById("mostrarNome")
+        .innerText = nome;
+
+
+    document.getElementById("mostrarCurso")
+        .innerText = curso;
+
+
+    document.getElementById("mostrarInscricao")
+        .innerText =
+        formatarKz(VALOR_INSCRICAO);
+
+
+    document.getElementById("mostrarDuracao")
+        .innerText = duracao;
+
+
+    document.getElementById("mostrarMensalidade")
+        .innerText =
+        formatarKz(mensalidade);
+
+
+    document.getElementById("mostrarTotal")
+        .innerText =
+        formatarKz(total);
+
+
+
+    /* =================================
+            DATA
+    ================================== */
+
+    const data = new Date();
+
+
+    const dataFormatada =
+        data.toLocaleDateString(
+            "pt-AO",
+            {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric"
+            }
+        );
+
+
+    document.getElementById("mostrarData")
+        .innerText = dataFormatada;
+
+
+
+    /* =================================
+            MOSTRAR
+    ================================== */
+
+    document.getElementById("resultado")
+        .style.display = "block";
+
+
+    document.getElementById("resultado")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+
+/* =====================================
+        IMPRIMIR
+===================================== */
+
+function imprimirComprovativo(){
+
+    alert(
+        "Será aberta uma janela para imprimir o comprovativo ou guardá-lo em PDF."
+    );
+
+
+    window.print();
+
+}
+
+</script>
+
+
+</body>
+
+</html>
