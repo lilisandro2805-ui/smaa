@@ -6,12 +6,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>S.M.A | Comprovativo</title>
+<title>S.M.A | Faturas Mensais</title>
 
 <link rel="shortcut icon" href="Logo da sma Soluções.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 
 <style>
 
@@ -25,7 +24,6 @@
     box-sizing:border-box;
 }
 
-
 body{
 
     font-family:'Poppins',sans-serif;
@@ -33,7 +31,6 @@ body{
     min-height:100vh;
 
     background:
-
     radial-gradient(
         circle at top,
         #2563eb,
@@ -71,7 +68,6 @@ header{
 
 }
 
-
 header img{
 
     width:200px;
@@ -87,7 +83,7 @@ header img{
 
     width:90%;
 
-    max-width:600px;
+    max-width:700px;
 
     margin:50px auto;
 
@@ -100,15 +96,12 @@ header img{
     border-radius:30px;
 
     box-shadow:
-
     0 25px 60px rgba(0,0,0,.4);
 
     animation:
-
     aparecer .8s ease;
 
 }
-
 
 .formulario h1{
 
@@ -122,8 +115,7 @@ header img{
 
 }
 
-
-.formulario p{
+.formulario > p{
 
     text-align:center;
 
@@ -135,7 +127,7 @@ header img{
 
 
 /* =====================================
-        CAMPOS
+        FORM
 ===================================== */
 
 form{
@@ -148,7 +140,6 @@ form{
 
 }
 
-
 label{
 
     font-weight:600;
@@ -156,7 +147,6 @@ label{
     margin-top:10px;
 
 }
-
 
 input,
 select{
@@ -181,153 +171,13 @@ select{
 
 }
 
-
 input:focus,
 select:focus{
 
     border-color:#2563eb;
 
     box-shadow:
-
     0 0 10px rgba(37,99,235,.3);
-
-}
-
-
-/* =====================================
-        INSCRIÇÃO
-===================================== */
-
-.inscricao{
-
-    margin-top:10px;
-
-    padding:14px;
-
-    border-radius:12px;
-
-    background:#eff6ff;
-
-    color:#1e40af;
-
-    font-weight:600;
-
-    text-align:center;
-
-}
-
-
-/* =====================================
-        VALOR
-===================================== */
-
-#valorContainer{
-
-    display:none;
-
-}
-
-
-#valor{
-
-    appearance:textfield;
-
-}
-
-
-#valor::-webkit-outer-spin-button,
-#valor::-webkit-inner-spin-button{
-
-    -webkit-appearance:none;
-
-    margin:0;
-
-}
-
-
-.aviso{
-
-    font-size:13px;
-
-    color:#64748b;
-
-    margin-top:-5px;
-
-}
-
-
-/* =====================================
-        RESULTADO
-===================================== */
-
-#resultado{
-
-    margin-top:25px;
-
-    padding:25px;
-
-    border-radius:15px;
-
-    background:#f8fafc;
-
-    border:1px solid #e2e8f0;
-
-    display:none;
-
-}
-
-
-#resultado h3{
-
-    text-align:center;
-
-    color:#2563eb;
-
-    margin-bottom:20px;
-
-}
-
-
-.info{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:10px;
-
-    padding:11px 0;
-
-    border-bottom:1px solid #e2e8f0;
-
-}
-
-
-.info strong{
-
-    color:#334155;
-
-}
-
-
-.info span{
-
-    text-align:right;
-
-    color:#0f172a;
-
-}
-
-
-.total{
-
-    margin-top:10px;
-
-    font-size:19px;
-
-    font-weight:700;
-
-    color:#2563eb;
 
 }
 
@@ -362,7 +212,6 @@ button{
 
 }
 
-
 button:hover{
 
     background:#1d4ed8;
@@ -370,18 +219,270 @@ button:hover{
     transform:translateY(-5px);
 
     box-shadow:
-
     0 15px 30px rgba(37,99,235,.4);
 
 }
 
 
+/* =====================================
+        FATURA
+===================================== */
+
+#fatura{
+
+    margin-top:30px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    display:none;
+
+}
+
+
+.fatura-topo{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+    padding-bottom:20px;
+
+    border-bottom:2px solid #2563eb;
+
+}
+
+
+.fatura-titulo h2{
+
+    color:#2563eb;
+
+    font-size:28px;
+
+}
+
+
+.fatura-titulo p{
+
+    color:#64748b;
+
+    font-size:13px;
+
+}
+
+
+.numero-fatura{
+
+    text-align:right;
+
+    font-size:13px;
+
+    color:#64748b;
+
+}
+
+
+.numero-fatura strong{
+
+    display:block;
+
+    color:#0f172a;
+
+    font-size:16px;
+
+}
+
+
+/* =====================================
+        DADOS
+===================================== */
+
+.dados{
+
+    margin-top:25px;
+
+}
+
+
+.info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+
+.info strong{
+
+    color:#334155;
+
+}
+
+
+.info span{
+
+    text-align:right;
+
+    color:#0f172a;
+
+}
+
+
+/* =====================================
+        TOTAL
+===================================== */
+
+.total{
+
+    margin-top:15px;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:21px;
+
+    font-weight:700;
+
+}
+
+
+/* =====================================
+        ESTADO
+===================================== */
+
+.estado{
+
+    margin-top:20px;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-weight:700;
+
+}
+
+.estado.pago{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.estado.pendente{
+
+    background:#fef3c7;
+
+    color:#a16207;
+
+}
+
+
+/* =====================================
+        CÓDIGO
+===================================== */
+
+.codigo-box{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border:2px dashed #94a3b8;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    background:white;
+
+}
+
+.codigo-box small{
+
+    display:block;
+
+    color:#64748b;
+
+    margin-bottom:8px;
+
+}
+
+.codigo{
+
+    color:#0f172a;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    word-break:break-all;
+
+}
+
+
+/* =====================================
+        RODAPÉ
+===================================== */
+
+.fatura-footer{
+
+    margin-top:25px;
+
+    padding-top:20px;
+
+    border-top:1px solid #e2e8f0;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:12px;
+
+}
+
+
+/* =====================================
+        BOTÃO IMPRIMIR
+===================================== */
+
 #btnImprimir{
+
+    width:100%;
 
     background:#16a34a;
 
 }
-
 
 #btnImprimir:hover{
 
@@ -396,22 +497,21 @@ button:hover{
 
 @keyframes aparecer{
 
-from{
+    from{
 
-    opacity:0;
+        opacity:0;
 
-    transform:translateY(40px);
+        transform:translateY(40px);
 
-}
+    }
 
+    to{
 
-to{
+        opacity:1;
 
-    opacity:1;
+        transform:translateY(0);
 
-    transform:translateY(0);
-
-}
+    }
 
 }
 
@@ -428,13 +528,11 @@ to{
 
     }
 
-
     .formulario h1{
 
         font-size:28px;
 
     }
-
 
     header img{
 
@@ -442,6 +540,17 @@ to{
 
     }
 
+    .fatura-topo{
+
+        flex-direction:column;
+
+    }
+
+    .numero-fatura{
+
+        text-align:left;
+
+    }
 
     .info{
 
@@ -451,10 +560,17 @@ to{
 
     }
 
-
     .info span{
 
         text-align:left;
+
+    }
+
+    .total{
+
+        flex-direction:column;
+
+        gap:5px;
 
     }
 
@@ -475,7 +591,6 @@ to{
 
     }
 
-
     header{
 
         background:white;
@@ -484,17 +599,21 @@ to{
 
     }
 
-
     header img{
 
         width:150px;
 
     }
 
-
     .formulario{
 
-        margin:20px auto;
+        width:100%;
+
+        max-width:none;
+
+        margin:0;
+
+        padding:20px;
 
         box-shadow:none;
 
@@ -502,7 +621,7 @@ to{
 
     }
 
-
+    .formulario > h1,
     .formulario > p,
     form,
     #btnImprimir{
@@ -511,8 +630,7 @@ to{
 
     }
 
-
-    #resultado{
+    #fatura{
 
         display:block !important;
 
@@ -520,17 +638,14 @@ to{
 
         background:white;
 
+        margin:0;
+
     }
 
 }
-.im{
-    width: 100px;
+img{
+    width: 50px;
 }
-
-
-
-
-
 
 </style>
 
@@ -549,42 +664,56 @@ to{
 
 </header>
 
-<button>
-    <a href="pagamento.html">PAGAMENTO</a>
-</button>
 
 <main class="formulario">
 
     <h1>
-        Comprovativo
+        Faturas Mensais
     </h1>
 
-
     <p>
-        Preencha os seus dados corretamente.
+        Preencha os dados para gerar a fatura mensal.
     </p>
 
 
+    <form onsubmit="gerarFatura(event)">
 
-    <form onsubmit="gerarComprovativo(event)">
+
+        <!-- =================================
+                NOME
+        ================================== -->
+
+        <label for="nome">
+            Nome completo
+        </label>
+
+        <input
+            type="text"
+            id="nome"
+            placeholder="Digite o nome completo"
+            required
+        >
 
 
-        <!-- CURSO -->
+        <!-- =================================
+                CURSO
+        ================================== -->
 
         <label for="curso">
             Curso
         </label>
 
-
         <select
             id="curso"
-            onchange="verificarCurso()"
             required
         >
 
             <option value="">
                 Selecione o curso
             </option>
+
+
+            <!-- CURSOS -->
 
             <option value="Inglês">
                 Inglês
@@ -606,6 +735,38 @@ to{
                 Marketing
             </option>
 
+
+            <!-- PROGRAMAÇÃO -->
+
+            <option value="Programação">
+                Programação
+            </option>
+
+            <option value="Programação Web">
+                Programação Web
+            </option>
+
+            <option value="HTML e CSS">
+                HTML e CSS
+            </option>
+
+            <option value="JavaScript">
+                JavaScript
+            </option>
+
+            <option value="Python">
+                Python
+            </option>
+
+            <option value="Java">
+                Java
+            </option>
+
+            <option value="Desenvolvimento de Software">
+                Desenvolvimento de Software
+            </option>
+
+
             <option value="Outro">
                 Outro
             </option>
@@ -613,182 +774,271 @@ to{
         </select>
 
 
+        <!-- =================================
+                MÊS
+        ================================== -->
 
-        <!-- NOME -->
-
-        <label for="nome">
-            Nome completo
+        <label for="mes">
+            Mês da fatura
         </label>
 
+        <select
+            id="mes"
+            required
+        >
+
+            <option value="">
+                Selecione o mês
+            </option>
+
+            <option value="Janeiro">
+                Janeiro
+            </option>
+
+            <option value="Fevereiro">
+                Fevereiro
+            </option>
+
+            <option value="Março">
+                Março
+            </option>
+
+            <option value="Abril">
+                Abril
+            </option>
+
+            <option value="Maio">
+                Maio
+            </option>
+
+            <option value="Junho">
+                Junho
+            </option>
+
+            <option value="Julho">
+                Julho
+            </option>
+
+            <option value="Agosto">
+                Agosto
+            </option>
+
+            <option value="Setembro">
+                Setembro
+            </option>
+
+            <option value="Outubro">
+                Outubro
+            </option>
+
+            <option value="Novembro">
+                Novembro
+            </option>
+
+            <option value="Dezembro">
+                Dezembro
+            </option>
+
+        </select>
+
+
+        <!-- =================================
+                VALOR
+        ================================== -->
+
+        <label for="valor">
+            Valor da mensalidade
+        </label>
 
         <input
-            type="text"
-            id="nome"
-            placeholder="Digite o seu nome"
+            type="number"
+            id="valor"
+            min="100"
+            placeholder="Ex.: 10000"
             required
         >
 
 
+        <!-- =================================
+                ESTADO
+        ================================== -->
 
-        <!-- INSCRIÇÃO -->
+        <label for="estado">
+            Estado do pagamento
+        </label>
 
-        <div class="inscricao">
-
-            Taxa de inscrição:
-            <strong>2.000 Kz</strong>
-
-        </div>
-
-
-
-        <!-- VALOR DOS OUTROS CURSOS -->
-
-        <div id="valorContainer">
-
-            <label for="valor">
-                Valor mensal
-            </label>
-
-
-            <input
-                type="number"
-                id="valor"
-                min="10000"
-                max="12000"
-                step="100"
-                placeholder="10.000 - 12.000 Kz"
-            >
-
-
-            <span class="aviso">
-
-                O valor deve estar entre
-                10.000 Kz e 12.000 Kz.
-
-            </span>
-
-        </div>
-
-
-
-        <button
-            type="submit"
-            id="btnGerar"
+        <select
+            id="estado"
+            required
         >
 
-            Receber o comprovativo
+            <option value="Pago">
+                Pago
+            </option>
+
+            <option value="Pendente">
+                Pendente
+            </option>
+
+        </select>
+
+
+        <button type="submit">
+
+            Gerar fatura
 
         </button>
-
 
     </form>
 
 
-
     <!-- =================================
-            COMPROVATIVO
+            FATURA GERADA
     ================================== -->
 
-    <div id="resultado">
+    <div id="fatura">
 
 
-        <h3>
-            COMPROVATIVO DE PAGAMENTO
-        </h3>
+        <div class="fatura-topo">
 
 
+            <div class="fatura-titulo">
 
-        <div class="info">
+                <h2>
+                    FATURA
+                </h2>
 
-            <strong>
-                Nome:
-            </strong>
+                <p>
+                    S.M.A Soluções
+                </p>
 
-            <span id="mostrarNome"></span>
+            </div>
+
+
+            <div class="numero-fatura">
+
+                Nº da fatura:
+
+                <strong id="mostrarNumero">
+                </strong>
+
+            </div>
+
 
         </div>
 
 
+        <div class="dados">
 
-        <div class="info">
 
-            <strong>
-                Curso:
-            </strong>
+            <div class="info">
 
-            <span id="mostrarCurso"></span>
+                <strong>
+                    Cliente:
+                </strong>
+
+                <span id="mostrarNome">
+                </span>
+
+            </div>
+
+
+            <div class="info">
+
+                <strong>
+                    Curso:
+                </strong>
+
+                <span id="mostrarCurso">
+                </span>
+
+            </div>
+
+
+            <div class="info">
+
+                <strong>
+                    Mês de referência:
+                </strong>
+
+                <span id="mostrarMes">
+                </span>
+
+            </div>
+
+
+            <div class="info">
+
+                <strong>
+                    Data de emissão:
+                </strong>
+
+                <span id="mostrarData">
+                </span>
+
+            </div>
+
+
+            <div class="total">
+
+                <strong>
+                    Total:
+                </strong>
+
+                <span id="mostrarValor">
+                </span>
+
+            </div>
+
+
+            <div
+                id="mostrarEstado"
+                class="estado"
+            >
+
+            </div>
+
+
+            <div class="codigo-box">
+
+                <small>
+                    CÓDIGO DE AUTENTICIDADE
+                </small>
+
+                <div
+                    id="mostrarCodigo"
+                    class="codigo"
+                >
+                </div>
+
+            </div>
+
 
         </div>
 
 
+        <div class="fatura-footer">
 
-        <div class="info">
+            S.M.A Soluções
 
-            <strong>
-                Inscrição:
-            </strong>
+            <br>
 
-            <span id="mostrarInscricao"></span>
+            Documento emitido eletronicamente.
 
-        </div>
+            <br>
 
-
-
-        <div class="info">
-
-            <strong>
-                Duração:
-            </strong>
-
-            <span id="mostrarDuracao"></span>
+            Guarde o código para verificar a autenticidade desta fatura.
 
         </div>
-
-
-
-        <div class="info">
-
-            <strong>
-                Mensalidade:
-            </strong>
-
-            <span id="mostrarMensalidade"></span>
-
-        </div>
-
-
-
-        <div class="info total">
-
-            <strong>
-                Valor total:
-            </strong>
-
-            <span id="mostrarTotal"></span>
-
-        </div>
-
-
-
-        <div class="info">
-
-            <strong>
-                Data:
-            </strong>
-
-            <span id="mostrarData"></span>
-
-        </div>
-
-                              <img src="YAMY.jpeg" alt="" class="im" >
+           <img src="YAMY.jpeg" alt="">
 
         <button
             type="button"
             id="btnImprimir"
-            onclick="imprimirComprovativo()"
+            onclick="imprimirFatura()"
         >
 
-            🖨️ Imprimir comprovativo
+            🖨️ Imprimir / Guardar PDF
 
         </button>
 
@@ -799,78 +1049,7 @@ to{
 </main>
 
 
-
 <script>
-
-
-/* =====================================
-        VALOR DA INSCRIÇÃO
-===================================== */
-
-const VALOR_INSCRICAO = 2000;
-
-
-
-/* =====================================
-        VERIFICAR CURSO
-===================================== */
-
-function verificarCurso(){
-
-    const curso =
-        document.getElementById("curso").value;
-
-
-    const valorContainer =
-        document.getElementById("valorContainer");
-
-
-    const valor =
-        document.getElementById("valor");
-
-
-    /*
-        INGLÊS
-        7.000 Kz por mês
-    */
-
-    if(curso === "Inglês"){
-
-        valorContainer.style.display = "none";
-
-        valor.required = false;
-
-        valor.value = "";
-
-    }
-
-
-    /*
-        OUTROS CURSOS
-        10.000 - 12.000 Kz
-    */
-
-    else if(curso !== ""){
-
-        valorContainer.style.display = "block";
-
-        valor.required = true;
-
-    }
-
-
-    else{
-
-        valorContainer.style.display = "none";
-
-        valor.required = false;
-
-        valor.value = "";
-
-    }
-
-}
-
 
 
 /* =====================================
@@ -879,188 +1058,238 @@ function verificarCurso(){
 
 function formatarKz(valor){
 
-    return Number(valor).toLocaleString("pt-AO") + " Kz";
+    return Number(valor)
+        .toLocaleString("pt-AO") + " Kz";
 
 }
 
 
-
 /* =====================================
-        GERAR COMPROVATIVO
+        GERAR CÓDIGO
 ===================================== */
 
-function gerarComprovativo(event){
+function gerarCodigo(){
+
+    const array =
+        new Uint32Array(4);
+
+    crypto.getRandomValues(array);
+
+    const partes =
+        Array.from(array).map(
+            numero =>
+            numero
+            .toString(36)
+            .toUpperCase()
+        );
+
+    return "SMA-" +
+
+        partes[0].substring(0,6) +
+
+        "-" +
+
+        partes[1].substring(0,6) +
+
+        "-" +
+
+        partes[2].substring(0,6) +
+
+        "-" +
+
+        partes[3].substring(0,6);
+
+}
+
+
+/* =====================================
+        NÚMERO DA FATURA
+===================================== */
+
+function gerarNumeroFatura(){
+
+    const agora =
+        new Date();
+
+    const ano =
+        agora.getFullYear();
+
+    const numero =
+        Math.floor(
+            100000 +
+            Math.random() * 900000
+        );
+
+    return "SMA-" +
+        ano +
+        "-" +
+        numero;
+
+}
+
+
+/* =====================================
+        GERAR FATURA
+===================================== */
+
+function gerarFatura(event){
 
     event.preventDefault();
 
 
     const nome =
-        document.getElementById("nome")
+        document
+        .getElementById("nome")
         .value
         .trim();
 
 
     const curso =
-        document.getElementById("curso")
+        document
+        .getElementById("curso")
         .value;
 
 
-    const valorInput =
-        document.getElementById("valor")
+    const mes =
+        document
+        .getElementById("mes")
         .value;
 
 
-    let mensalidade;
-
-    let duracao;
-
-    let total;
-
+    const valor =
+        document
+        .getElementById("valor")
+        .value;
 
 
-    /* =================================
-            CURSO DE INGLÊS
-    ================================== */
+    const estado =
+        document
+        .getElementById("estado")
+        .value;
 
-    if(curso === "Inglês"){
 
-        mensalidade = 7000;
+    if(
+        !nome ||
+        !curso ||
+        !mes ||
+        !valor
+    ){
 
-        duracao = "1 mês";
+        alert(
+            "Preencha todos os campos."
+        );
 
-        total =
-            VALOR_INSCRICAO +
-            mensalidade;
+        return;
 
     }
 
 
-
-    /* =================================
-            OUTROS CURSOS
-    ================================== */
-
-    else{
-
-        mensalidade = Number(valorInput);
-
-
-        /*
-            LIMITES DE SEGURANÇA
-        */
-
-        if(
-            isNaN(mensalidade) ||
-            mensalidade < 10000 ||
-            mensalidade > 12000
-        ){
-
-            alert(
-                "O valor mensal deve estar entre 10.000 Kz e 12.000 Kz."
-            );
-
-            return;
-
-        }
-
-
-        duracao = "2 meses";
-
-
-        /*
-            2 MESES + INSCRIÇÃO
-        */
-
-        total =
-            VALOR_INSCRICAO +
-            (mensalidade );
-
-    }
-
-
-
-    /* =================================
-            PREENCHER COMPROVATIVO
-    ================================== */
-
-    document.getElementById("mostrarNome")
-        .innerText = nome;
-
-
-    document.getElementById("mostrarCurso")
-        .innerText = curso;
-
-
-    document.getElementById("mostrarInscricao")
-        .innerText =
-        formatarKz(VALOR_INSCRICAO);
-
-
-    document.getElementById("mostrarDuracao")
-        .innerText = duracao;
-
-
-    document.getElementById("mostrarMensalidade")
-        .innerText =
-        formatarKz(mensalidade);
-
-
-    document.getElementById("mostrarTotal")
-        .innerText =
-        formatarKz(total);
-
-
-
-    /* =================================
+    /* ================================
             DATA
-    ================================== */
+    ================================= */
 
-    const data = new Date();
+    const data =
+        new Date();
 
 
     const dataFormatada =
         data.toLocaleDateString(
             "pt-AO",
             {
-                day: "2-digit",
-                month: "2-digit",
-                year: "numeric"
+                day:"2-digit",
+                month:"2-digit",
+                year:"numeric"
             }
         );
 
 
-    document.getElementById("mostrarData")
-        .innerText = dataFormatada;
+    /* ================================
+            PREENCHER
+    ================================= */
+
+    document
+    .getElementById("mostrarNome")
+    .innerText = nome;
 
 
+    document
+    .getElementById("mostrarCurso")
+    .innerText = curso;
 
-    /* =================================
+
+    document
+    .getElementById("mostrarMes")
+    .innerText = mes;
+
+
+    document
+    .getElementById("mostrarData")
+    .innerText = dataFormatada;
+
+
+    document
+    .getElementById("mostrarValor")
+    .innerText =
+        formatarKz(valor);
+
+
+    document
+    .getElementById("mostrarNumero")
+    .innerText =
+        gerarNumeroFatura();
+
+
+    document
+    .getElementById("mostrarCodigo")
+    .innerText =
+        gerarCodigo();
+
+
+    /* ================================
+            ESTADO
+    ================================= */
+
+    const estadoElemento =
+        document
+        .getElementById("mostrarEstado");
+
+
+    estadoElemento.innerText =
+        "Estado: " + estado;
+
+
+    estadoElemento.className =
+        "estado " +
+        (
+            estado === "Pago"
+            ? "pago"
+            : "pendente"
+        );
+
+
+    /* ================================
             MOSTRAR
-    ================================== */
+    ================================= */
 
-    document.getElementById("resultado")
-        .style.display = "block";
+    document
+    .getElementById("fatura")
+    .style.display = "block";
 
 
-    document.getElementById("resultado")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+    document
+    .getElementById("fatura")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
-
 
 
 /* =====================================
         IMPRIMIR
 ===================================== */
 
-function imprimirComprovativo(){
-
-    alert(
-        "Será aberta uma janela para imprimir o comprovativo ou guardá-lo em PDF."
-    );
-
+function imprimirFatura(){
 
     window.print();
 
