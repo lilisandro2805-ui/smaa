@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S.M.A | Gerador de Documentos</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    background:radial-gradient(circle at top,#2563eb,#050816 70%);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+header{
+    width:100%;
+    padding:25px;
+    display:flex;
+    justify-content:center;
+    background:rgba(0,0,0,.3);
+    backdrop-filter:blur(10px);
+}
+
+header img{width:200px}
+
+.formulario{
+    width:90%;
+    max-width:800px;
+    margin:50px auto;
+    background:white;
+    color:#0f172a;
+    padding:45px;
+    border-radius:30px;
+    box-shadow:0 25px 60px rgba(0,0,0,.4);
+    animation:aparecer .8s ease;
+}
+
+.formulario h1{
+    text-align:center;
+    color:#2563eb;
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.formulario>p{
+    text-align:center;
+    color:#64748b;
+    margin-bottom:35px;
+}
+
+form{display:flex;flex-direction:column;gap:12px}
+
+label{font-weight:600;margin-top:10px}
+
+input,select,textarea{
+    width:100%;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #cbd5e1;
+    outline:none;
+    font-size:16px;
+    font-family:'Poppins',sans-serif;
+    transition:.3s;
+    background:white;
+}
+
+textarea{resize:vertical;min-height:90px}
+
+input:focus,select:focus,textarea:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 10px rgba(37,99,235,.3);
+}
+
+button{
+    margin-top:20px;
+    padding:16px;
+    border:none;
+    border-radius:40px;
+    background:#2563eb;
+    color:white;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+    font-family:'Poppins',sans-serif;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(37,99,235,.4);
+}
+
+#adicionarItem{
+    margin-top:8px;
+    background:#0f172a;
+}
+
+#adicionarItem:hover{background:#1e293b}
+
+.item{
+    display:grid;
+    grid-template-columns:2fr .7fr 1fr auto;
+    gap:10px;
+    align-items:end;
+    margin-top:12px;
+    padding:15px;
+    border:1px solid #e2e8f0;
+    border-radius:15px;
+    background:#f8fafc;
+}
+
+.item button{
+    margin:0;
+    padding:12px 15px;
+    background:#dc2626;
+    font-size:14px;
+}
+
+.item button:hover{background:#b91c1c}
+
+.item-total{
+    font-weight:700;
+    padding:15px 0;
+}
+
+#documento{
+    margin-top:30px;
+    padding:30px;
+    border-radius:20px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    display:none;
+}
+
+.documento-topo{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+    padding-bottom:20px;
+    border-bottom:2px solid #2563eb;
+}
+
+.documento-titulo h2{color:#2563eb;font-size:28px}
+.documento-titulo p{color:#64748b;font-size:13px}
+
+.numero{
+    text-align:right;
+    font-size:13px;
+    color:#64748b;
+}
+
+.numero strong{
+    display:block;
+    color:#0f172a;
+    font-size:16px;
+}
+
+.dados{margin-top:25px}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:12px 0;
+    border-bottom:1px solid #e2e8f0;
+}
+
+.info strong{color:#334155}
+.info span{text-align:right;color:#0f172a}
+
+.tabela{
+    width:100%;
+    margin-top:25px;
+    border-collapse:collapse;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.tabela th,.tabela td{
+    padding:12px;
+    text-align:left;
+    border-bottom:1px solid #e2e8f0;
+}
+
+.tabela th{
+    background:#eff6ff;
+    color:#2563eb;
+}
+
+.tabela td:last-child,.tabela th:last-child{text-align:right}
+
+.total{
+    margin-top:15px;
+    padding:18px;
+    border-radius:12px;
+    background:#eff6ff;
+    color:#2563eb;
+    display:flex;
+    justify-content:space-between;
+    font-size:21px;
+    font-weight:700;
+}
+
+.estado{
+    margin-top:20px;
+    padding:12px;
+    border-radius:12px;
+    text-align:center;
+    font-weight:700;
+}
+
+.estado.pago{background:#dcfce7;color:#15803d}
+.estado.pendente{background:#fef3c7;color:#a16207}
+
+.codigo-box{
+    margin-top:25px;
+    padding:20px;
+    border:2px dashed #94a3b8;
+    border-radius:15px;
+    text-align:center;
+    background:white;
+}
+
+.codigo-box small{display:block;color:#64748b;margin-bottom:8px}
+
+.codigo{
+    color:#0f172a;
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:2px;
+    word-break:break-all;
+}
+
+.documento-footer{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid #e2e8f0;
+    text-align:center;
+    color:#64748b;
+    font-size:12px;
+}
+
+#btnImprimir{width:100%;background:#16a34a}
+#btnImprimir:hover{background:#15803d}
+
+#btnNovo{width:100%;background:#64748b}
+#btnNovo:hover{background:#475569}
+
+@keyframes aparecer{
+    from{opacity:0;transform:translateY(40px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:600px){
+    .formulario{padding:25px}
+    .formulario h1{font-size:28px}
+    header img{width:150px}
+    .documento-topo{flex-direction:column}
+    .numero{text-align:left}
+    .info{flex-direction:column;gap:3px}
+    .info span{text-align:left}
+    .item{grid-template-columns:1fr}
+    .tabela{font-size:13px}
+}
+
+@media print{
+    body{background:white;color:#000}
+    header{background:white;backdrop-filter:none}
+    header img{width:150px}
+    .formulario{
+        width:100%;
+        max-width:none;
+        margin:0;
+        padding:20px;
+        box-shadow:none;
+        border:1px solid #ddd;
+    }
+    .formulario>h1,.formulario>p,form,#btnImprimir,#btnNovo{
+        display:none!important;
+    }
+    #documento{
+        display:block!important;
+        border:1px solid #000;
+        background:white;
+        margin:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="Logo da sma Soluções.png" alt="S.M.A">
+</header>
+
+<main class="formulario">
+
+<h1>Gerador de Documentos</h1>
+<p>Preencha os dados do cliente e adicione os produtos ou serviços.</p>
+
+<form onsubmit="gerarDocumento(event)">
+
+<label for="nif">NIF do comprador / cliente</label>
+<input type="text" id="nif" placeholder="Ex.: 5000000000" required>
+
+<label for="nome">Nome do comprador / cliente</label>
+<input type="text" id="nome" placeholder="Digite o nome completo" required>
+
+<label for="telefone">Telefone</label>
+<input type="tel" id="telefone" placeholder="Ex.: 923 000 000">
+
+<label for="tipo">Tipo de documento</label>
+<select id="tipo" required>
+    <option value="Comprovativo de Pagamento">Comprovativo de Pagamento</option>
+    <option value="Fatura">Fatura</option>
+    <option value="Recibo">Recibo</option>
+</select>
+
+<label for="pagamento">Método de pagamento</label>
+<select id="pagamento" required>
+    <option value="Numerário">Numerário</option>
+    <option value="Transferência bancária">Transferência bancária</option>
+    <option value="Multicaixa Express">Multicaixa Express</option>
+    <option value="TPA">TPA</option>
+    <option value="Outro">Outro</option>
+</select>
+
+<label>Produtos / Serviços</label>
+
+<div id="itens"></div>
+
+<button type="button" id="adicionarItem" onclick="adicionarItem()">
+    + Adicionar produto / serviço
+</button>
+
+<label for="estado">Estado do pagamento</label>
+<select id="estado" required>
+    <option value="Pago">Pago</option>
+    <option value="Pendente">Pendente</option>
+</select>
+
+<label for="data">Data</label>
+<input type="date" id="data" required>
+
+<label for="observacoes">Observações</label>
+<textarea id="observacoes" placeholder="Informações adicionais (opcional)"></textarea>
+
+<button type="submit">Gerar documento</button>
+
+</form>
+
+<div id="documento">
+
+<div class="documento-topo">
+    <div class="documento-titulo">
+        <h2 id="mostrarTipo">COMPROVATIVO</h2>
+        <p>S.M.A Soluções</p>
+    </div>
+
+    <div class="numero">
+        Nº do documento:
+        <strong id="mostrarNumero"></strong>
+    </div>
+</div>
+
+<div class="dados">
+
+<div class="info">
+    <strong>NIF:</strong>
+    <span id="mostrarNif"></span>
+</div>
+
+<div class="info">
+    <strong>Cliente:</strong>
+    <span id="mostrarNome"></span>
+</div>
+
+<div class="info">
+    <strong>Telefone:</strong>
+    <span id="mostrarTelefone"></span>
+</div>
+
+<div class="info">
+    <strong>Método de pagamento:</strong>
+    <span id="mostrarPagamento"></span>
+</div>
+
+<table class="tabela">
+<thead>
+<tr>
+    <th>Produto / Serviço</th>
+    <th>Qtd.</th>
+    <th>Preço unit.</th>
+    <th>Total</th>
+</tr>
+</thead>
+<tbody id="mostrarItens"></tbody>
+</table>
+
+<div class="total">
+    <strong>Valor total:</strong>
+    <span id="mostrarTotal"></span>
+</div>
+
+<div id="mostrarEstado" class="estado"></div>
+
+<div class="info" id="linhaObservacoes" style="display:none">
+    <strong>Observações:</strong>
+    <span id="mostrarObservacoes"></span>
+</div>
+
+<div class="info">
+    <strong>Data:</strong>
+    <span id="mostrarData"></span>
+</div>
+
+<div class="codigo-box">
+    <small>CÓDIGO DE AUTENTICIDADE</small>
+    <div id="mostrarCodigo" class="codigo"></div>
+</div>
+
+</div>
+
+<div class="documento-footer">
+    S.M.A Soluções
+    <br>
+    Documento emitido eletronicamente.
+    <br>
+    Guarde o código para verificar a autenticidade deste documento.
+</div>
+
+<button type="button" id="btnImprimir" onclick="imprimirDocumento()">
+    🖨️ Imprimir / Guardar PDF
+</button>
+
+<button type="button" id="btnNovo" onclick="novoDocumento()">
+    ↻ Criar novo documento
+</button>
+
+</div>
+
+</main>
+
+<script>
+let contadorItens = 0;
+
+function formatarKz(valor){
+    return Number(valor || 0).toLocaleString("pt-AO") + " Kz";
+}
+
+function adicionarItem(nome="", quantidade=1, preco=""){
+    contadorItens++;
+
+    const div = document.createElement("div");
+    div.className = "item";
+    div.id = "item-" + contadorItens;
+
+    div.innerHTML = `
+        <div>
+            <label>Produto / Serviço</label>
+            <input type="text" class="item-nome" placeholder="Ex.: Curso de Inglês" value="${nome}">
+        </div>
+
+        <div>
+            <label>Qtd.</label>
+            <input type="number" class="item-qtd" min="1" value="${quantidade}">
+        </div>
+
+        <div>
+            <label>Preço unitário</label>
+            <input type="number" class="item-preco" min="0" placeholder="Ex.: 7000" value="${preco}">
+        </div>
+
+        <button type="button" onclick="removerItem(${contadorItens})">
+            Remover
+        </button>
+    `;
+
+    document.getElementById("itens").appendChild(div);
+}
+
+function removerItem(id){
+    const item = document.getElementById("item-" + id);
+    if(item) item.remove();
+}
+
+function gerarCodigo(){
+    const array = new Uint32Array(4);
+    crypto.getRandomValues(array);
+
+    const partes = Array.from(array).map(
+        numero => numero.toString(36).toUpperCase()
+    );
+
+    return "SMA-" +
+        partes[0].substring(0,6) + "-" +
+        partes[1].substring(0,6) + "-" +
+        partes[2].substring(0,6) + "-" +
+        partes[3].substring(0,6);
+}
+
+function gerarNumero(){
+    const ano = new Date().getFullYear();
+    const numero = Math.floor(100000 + Math.random() * 900000);
+    return "SMA-" + ano + "-" + numero;
+}
+
+function formatarData(data){
+    if(!data) return "";
+    const partes = data.split("-");
+    return partes[2] + "/" + partes[1] + "/" + partes[0];
+}
+
+function gerarDocumento(event){
+    event.preventDefault();
+
+    const nif = document.getElementById("nif").value.trim();
+    const nome = document.getElementById("nome").value.trim();
+    const telefone = document.getElementById("telefone").value.trim();
+    const tipo = document.getElementById("tipo").value;
+    const pagamento = document.getElementById("pagamento").value;
+    const estado = document.getElementById("estado").value;
+    const data = document.getElementById("data").value;
+    const observacoes = document.getElementById("observacoes").value.trim();
+
+    const itens = [];
+
+    document.querySelectorAll(".item").forEach(item => {
+        const nomeItem = item.querySelector(".item-nome").value.trim();
+        const qtd = Number(item.querySelector(".item-qtd").value);
+        const preco = Number(item.querySelector(".item-preco").value);
+
+        if(nomeItem && qtd > 0 && preco >= 0){
+            itens.push({
+                nome:nomeItem,
+                qtd:qtd,
+                preco:preco,
+                total:qtd * preco
+            });
+        }
+    });
+
+    if(!nif || !nome || !data){
+        alert("Preencha o NIF, nome e data.");
+        return;
+    }
+
+    if(itens.length === 0){
+        alert("Adicione pelo menos um produto ou serviço.");
+        return;
+    }
+
+    const total = itens.reduce(
+        (soma,item) => soma + item.total,
+        0
+    );
+
+    document.getElementById("mostrarTipo").innerText =
+        tipo.toUpperCase();
+
+    document.getElementById("mostrarNumero").innerText =
+        gerarNumero();
+
+    document.getElementById("mostrarNif").innerText = nif;
+    document.getElementById("mostrarNome").innerText = nome;
+    document.getElementById("mostrarTelefone").innerText =
+        telefone || "Não informado";
+    document.getElementById("mostrarPagamento").innerText =
+        pagamento;
+    document.getElementById("mostrarData").innerText =
+        formatarData(data);
+    document.getElementById("mostrarTotal").innerText =
+        formatarKz(total);
+
+    const tbody = document.getElementById("mostrarItens");
+    tbody.innerHTML = "";
+
+    itens.forEach(item => {
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+            <td>${escapeHtml(item.nome)}</td>
+            <td>${item.qtd}</td>
+            <td>${formatarKz(item.preco)}</td>
+            <td>${formatarKz(item.total)}</td>
+        `;
+
+        tbody.appendChild(tr);
+    });
+
+    const estadoElemento =
+        document.getElementById("mostrarEstado");
+
+    estadoElemento.innerText =
+        "Estado: " + estado;
+
+    estadoElemento.className =
+        "estado " +
+        (estado === "Pago" ? "pago" : "pendente");
+
+    const linhaObservacoes =
+        document.getElementById("linhaObservacoes");
+
+    if(observacoes){
+        linhaObservacoes.style.display = "flex";
+        document.getElementById("mostrarObservacoes").innerText =
+            observacoes;
+    }else{
+        linhaObservacoes.style.display = "none";
+    }
+
+    document.getElementById("mostrarCodigo").innerText =
+        gerarCodigo();
+
+    document.getElementById("documento").style.display = "block";
+
+    document.getElementById("documento").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+function escapeHtml(text){
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function imprimirDocumento(){
+    window.print();
+}
+
+function novoDocumento(){
+    document.getElementById("documento").style.display = "none";
+    document.querySelector("form").reset();
+    document.getElementById("itens").innerHTML = "";
+    contadorItens = 0;
+    adicionarItem();
+    document.getElementById("data").value =
+        new Date().toISOString().split("T")[0];
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+document.getElementById("data").value =
+    new Date().toISOString().split("T")[0];
+
+adicionarItem();
+</script>
+
+</body>
+</html>
